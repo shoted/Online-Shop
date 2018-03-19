@@ -1,0 +1,5 @@
+C:\Users\shote\Desktop\Shop\CommonHelper\bin\Debug\CommonHelper.dll
+C:\Users\shote\Desktop\Shop\CommonHelper\bin\Debug\CommonHelper.pdb
+C:\Users\shote\Desktop\Shop\CommonHelper\obj\Debug\CommonHelper.csproj.CoreCompileInputs.cache
+C:\Users\shote\Desktop\Shop\CommonHelper\obj\Debug\CommonHelper.dll
+C:\Users\shote\Desktop\Shop\CommonHelper\obj\Debug\CommonHelper.pdb

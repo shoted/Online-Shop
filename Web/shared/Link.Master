@@ -1,0 +1,60 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Link.master.cs" Inherits="Web.shared.Link" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="Bookmark" href="/favicon.ico">
+    <link rel="Shortcut Icon" href="/favicon.ico" />
+
+    <link rel="stylesheet" type="text/css" href="../assets/lib/H-ui/static/h-ui/css/H-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/lib/H-ui/static/h-ui.admin/css/H-ui.admin.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/lib/H-ui/lib/Hui-iconfont/1.0.8/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/lib/H-ui/static/h-ui.admin/skin/default/skin.css" id="skin" />
+    <link rel="stylesheet" type="text/css" href="../assets/lib/H-ui/static/h-ui.admin/css/style.css" />
+    <link href="../assets/css/style.css" rel="stylesheet" />
+    <title></title>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+   
+        <div class="page-container">
+            <asp:ContentPlaceHolder ID="body" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    
+    <script type="text/javascript" src="../assets/lib/H-ui/lib/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../assets/lib/H-ui/lib/layer/2.4/layer.js"></script>
+    <script type="text/javascript" src="../assets/lib/H-ui/static/h-ui/js/H-ui.min.js"></script>
+    <script type="text/javascript" src="../assets/lib/H-ui/static/h-ui.admin/js/H-ui.admin.js"></script>
+    <script src="../assets/lib/H-ui/lib/jquery.contextmenu/jquery.contextmenu.r2.js"></script>
+    <script>
+        $(function () {
+            $("#min_title_list li").contextMenu('Huiadminmenu', {
+                bindings: {
+                    'closethis': function (t) {
+                        console.log(t);
+                        if (t.find("i")) {
+                            t.find("i").trigger("click");
+                        }
+                    },
+                    'closeall': function (t) {
+                        alert('Trigger was ' + t.id + '\nAction was Email');
+                    },
+                }
+            });
+
+        });
+    </script>
+    <asp:ContentPlaceHolder ID="foot" runat="server">
+    </asp:ContentPlaceHolder>
+</body>
+</html>

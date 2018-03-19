@@ -1,0 +1,10 @@
+C:\Users\shote\Desktop\Shop\DAL\bin\Debug\DAL.dll
+C:\Users\shote\Desktop\Shop\DAL\bin\Debug\DAL.pdb
+C:\Users\shote\Desktop\Shop\DAL\bin\Debug\CommonHelper.dll
+C:\Users\shote\Desktop\Shop\DAL\bin\Debug\Model.dll
+C:\Users\shote\Desktop\Shop\DAL\bin\Debug\CommonHelper.pdb
+C:\Users\shote\Desktop\Shop\DAL\bin\Debug\Model.pdb
+C:\Users\shote\Desktop\Shop\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\shote\Desktop\Shop\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\shote\Desktop\Shop\DAL\obj\Debug\DAL.dll
+C:\Users\shote\Desktop\Shop\DAL\obj\Debug\DAL.pdb

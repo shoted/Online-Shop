@@ -1,0 +1,348 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Layout.master.cs" Inherits="Web.shared.Layout" %>
+
+<%@ Register Src="~/shared/Cat.ascx" TagPrefix="uc1" TagName="Cat" %>
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="/assets/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="/assets/css/style.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder runat="server" ID="head"></asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            position: relative;
+            min-height: 1px;
+            float: left;
+            width: 41.66666667%;
+            left: 0px;
+            top: 0px;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="sitebar">
+        <div class="container">
+            <div class="row h30 lh30 f12">
+                <div class="col-lg-8">
+                    <a href="javascript:;" class="bootmark pull-left" rel="nofollow"><i class="icon-main icon-collect mt8 mr5"></i>收藏</a>
+                    <span class="pull-left">您好，欢迎您光临！</span>
+                    <span class="bar-link">
+                        <%if (Session["current_user"] == null)
+                            { %>
+                        <a href="/account/login.aspx"><span class="glyphicon glyphicon-log-in"></span>登录 </a>
+                        <a href="/account/register.aspx"><span class="glyphicon glyphicon-lock"></span>注册 </a>
+                        <%} %>
+                        <% else
+                            {%>
+                        <ul class=" bar-link">
+                            <li>欢迎 <a href="../member/MemberCenter.aspx">
+                                <span class="glyphicon glyphicon-user"></span>ID: <%=Session["current_user"] %>  登陆  </a>| </li>
+                            <li><a href="../member/MemberCenter.aspx"><span class="glyphicon glyphicon-home"></span>个人中心 </a>| </li>
+                            <li><a href="../cart.aspx"><span class="glyphicon glyphicon-shopping-cart"></span>购物车 </a>| </li>
+                            <li><a href="javascript:void(0)" id="logout"><span class="glyphicon glyphicon-log-out"></span>退出 </a>| </li>
+                            <li><a href="javascript:void(0)" id="shutdown"><span class="glyphicon glyphicon-off"></span>注销 </a></li>
+                        </ul>
+                        <%  } %>
+                    </span>
+                </div>
+                <div class="col-lg-4">
+                    <ul class="pull-right bar-link">
+                        <li><a href="../Focus.aspx"><span class="glyphicon glyphicon-book"></span>我的收藏 </a>| </li>
+                        <li><a href="/member/myorder.aspx"><span class="glyphicon glyphicon-bookmark"></span>我的订单 </a></li>
+                        <li class="tel-num"><i class="glyphicon glyphicon-phone-alt"></i>8888-888-888 </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/#sitebar-->
+    <div id="header">
+        <div class="container">
+            <div class="row search">
+                <div class="col-lg-4">
+                    <h1 class="logo"><a href="index.aspx">
+                        <img src="/assets/img/logo/logo-text.png" alt="让每个人都满意！" /></a></h1>
+                </div>
+                <div class="auto-style1">
+                    <form action="/search.aspx" method="get">
+                        <label for="txt_search" class="hidden">搜索山寨淘宝 分类/品牌/商品</label>
+                        <input id="txt_search" value="<%=Request["q"] %>" type="text" name="q" accesskey="s" autocomplete="off" x-webkit-grammar="builtin:translate" required="required" class="s-combobox-input" role="combobox" aria-haspopup="true" title="请输入搜索文字" aria-label="请输入搜索文字">
+                        <button id="btn_search" type="submit">搜索</button>
+                    </form>
+                </div>
+                <div class="col-lg-3">
+                    <div id="my_account" class="btn-group mt30 ml50 ">
+                        <button type="button" class="btn btn-radius-none btn-default dropdown-toggle f12" data-toggle="dropdown">我的账户 <span class="caret"></span></button>
+                        <!--登录之前-->
+                        <%--  <%Response.Write(Login); %>--%>
+                        <!--登录之后-->
+                        <%----%>
+                    </div>
+                    <div id="mini_cart" class="btn-group mt30 ml15">
+                        <a href="~/cart.aspx" class="btn btn-radius-none btn-default dropdown-toggle f12" data-toggle="dropdown">
+                            <i class="icon-main icon-cart ilb"></i>去结算<span class="caret"></span>
+                        </a>
+                        <!--购物车为空-->
+                        <%-- <ul class="dropdown-box" role="menu">
+                            <li><i class="icon-main icon-mini-cart ilb"></i>购物车中还没有商品，赶紧选购吧！</li>
+                        </ul>--%>
+                        <!--购物车有商品-->
+                        <%--       <ul class="dropdown-box" role="menu">
+                            <li>
+                                <div class="box-title fb p10">最新加入的商品</div>
+                                <div class="box-content ">
+                                    <ul class="box-list">
+                                        <%
+                                            if (list != null)
+                                            {
+                                                foreach (var item in list)
+                                                {%>
+                                        <li>
+                                            <div class="pull-left product-info">
+                                                <img class="pull-left" alt="" src="/contents/books/<%=item.ISBN %>.jpg" />
+                                                <div class="summary"><a href=""><%=item.Title %></a></div>
+                                            </div>
+                                            <div class="pull-right price-info">
+                                                <b class="red-font">￥<%=item.UnitPrice.ToString("0.00") %></b>×1<br>
+                                                <span class="blue-font pull-right"><a href="/handler/DeleteCart.ashx?item=<%=item.CartId %>">删除</a></span>
+                                            </div>
+                                        </li>
+                                        <%
+                                                }
+                                            }%>
+                                    </ul>
+                                </div>
+                                <div class="box-settlement tr">
+                                    <a href="../cart.aspx" class="btn btn-danger">去购物车结算</a>
+                                </div>
+                            </li>
+                        </ul>--%>
+                        <ul class="dropdown-box" role="menu">
+                            <li>
+                                <div class="box-title fb p10">最新加入的商品</div>
+                                <div class="box-content ">
+                                    <ul class="box-list">
+
+                                        <li>
+                                            <div class="pull-left product-info">
+                                                <img class="pull-left" alt="" src="/contents/books/9787302086383.jpg">
+                                                <div class="summary"><a href="">Java算法（第3版·第1卷）</a></div>
+                                            </div>
+                                            <div class="pull-right price-info">
+                                                <b class="red-font">￥59.00</b>×1<br>
+                                                <span class="blue-font pull-right"><a href="/handler/DeleteCart.ashx?item=54">删除</a></span>
+                                            </div>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <div class="box-settlement tr">
+                                    <a href="../cart.aspx" class="btn btn-danger">去购物车结算</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="navbar navbar-red" role="navigation">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div id="menu" class="dropdown <% =IsIndex?"open":"hover-toggle" %>">
+                        <a class="navbar-brand dropdown-toggle" href="#">全部商品分类 <b class="caret"></b></a>
+                        <!--data-toggle="dropdown"-->
+                        <div class="clearfix"></div>
+                        <uc1:Cat runat="server" ID="Cat" />
+                    </div>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav f14">
+                        <li><a href="../index.aspx">首页</a></li>
+                        <li><a href="#">专题</a></li>
+                        <li><a href="#">优惠券</a></li>
+                        <!--<li class="dropdown"> <a href="#">Dropdown </a> </li>-->
+                    </ul>
+                    <!--<ul class="nav navbar-nav navbar-right">
+                        <li class="active"><a href="./">Default</a></li>
+                        <li><a href="../navbar-static-top/">Static top</a></li>
+                        <li><a href="../navbar-fixed-top/">Fixed top</a></li>
+                    </ul>-->
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+        </div>
+    </div>
+    <!--/#header-->
+    <div class="container">
+        <!-- 内容部分开始 -->
+
+        <asp:ContentPlaceHolder runat="server" ID="body"></asp:ContentPlaceHolder>
+
+        <!-- 内容部分结束 -->
+        <div class="row mt20">
+            <div class="col-lg-12">
+                <ul class="listbar-5">
+                    <li><i class="icon-main icon-intr-1 ilb ml31"></i>
+                        <p class="tc gray-font">
+                            正品保证<br>
+                            假1赔10
+                        </p>
+                    </li>
+                    <li><i class="icon-main icon-intr-2 ilb ml31"></i>
+                        <p class="tc gray-font">
+                            质优价廉<br>
+                            买贵就赔
+                        </p>
+                    </li>
+                    <li><i class="icon-main icon-intr-3 ilb ml31"></i>
+                        <p class="tc gray-font">
+                            7天保障<br>
+                            无理由退换
+                        </p>
+                    </li>
+                    <li><i class="icon-main icon-intr-4 ilb ml31"></i>
+                        <p class="tc gray-font">
+                            满100元<br>
+                            免运费
+                        </p>
+                    </li>
+                    <li><i class="icon-main icon-intr-5 ilb ml31"></i>
+                        <p class="tc gray-font">
+                            100优惠宝<br>
+                            =1元
+                        </p>
+                    </li>
+                    <li><i class="icon-main icon-intr-6 ilb ml31"></i>
+                        <p class="tc gray-font">
+                            24小时<br>
+                            闪电发货
+                        </p>
+                    </li>
+                    <li><i class="icon-main icon-intr-7 ilb ml31"></i>
+                        <p class="tc gray-font">
+                            7x24小时<br>
+                            在线客服
+                        </p>
+                    </li>
+                    <li><i class="icon-main icon-intr-8 ilb ml31"></i>
+                        <p class="tc gray-font">
+                            支持多种<br>
+                            支付方式
+                        </p>
+                    </li>
+                    <li><i class="icon-main icon-intr-9 ilb ml31"></i>
+                        <p class="tc gray-font">
+                            开箱验货<br>
+                            放心付款
+                        </p>
+                    </li>
+                    <li><i class="icon-main icon-intr-10 ilb ml31"></i>
+                        <p class="tc gray-font">
+                            晒单奖励<br>
+                            评论奖励
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row mt10">
+            <div class="col-lg-12 help-center">
+                <ul class="help-list">
+                    <li>
+                        <ul class="help-on">
+                            <li class="ontitle"><i class="icon-main icon-help-1 pull-left"></i>关于我们</li>
+                            <li class="ontext"><a href="/help/32/">关于淘宝</a></li>
+                            <li class="ontext"><a href="/help/29/">联系我们</a></li>
+                            <li class="ontext"><a href="/help/33/">加入我们</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="help-on">
+                            <li class="ontitle"><i class="icon-main icon-help-2 pull-left"></i>购物指南</li>
+                            <li class="ontext"><a href="/help/13/">购物流程</a></li>
+                            <li class="ontext"><a href="/help/18/">服务协议</a></li>
+                            <li class="ontext"><a href="/help/16/">优惠券说明</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="help-on">
+                            <li class="ontitle"><i class="icon-main icon-help-3 pull-left"></i>支付方式</li>
+                            <li class="ontext"><a href="/help/21/">银联支付</a></li>
+                            <li class="ontext"><a href="/help/22/">快钱支付</a></li>
+                            <li class="ontext"><a href="/help/23/">支付宝支付</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="help-on">
+                            <li class="ontitle"><i class="icon-main icon-help-4 pull-left"></i>配送方式</li>
+                            <li class="ontext"><a href="/help/31/">运费说明</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="help-on">
+                            <li class="ontitle"><i class="icon-main icon-help-5 pull-left"></i>售后服务</li>
+                            <li class="ontext"><a href="/help/24/">退换货政策</a></li>
+                            <li class="ontext"><a href="/help/25/">退换货流程</a></li>
+                            <li class="ontext"><a href="/help/26/">退换货申请</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="help-on">
+                            <li class="ontitle"><i class="icon-main icon-help-6 pull-left"></i>帮助信息</li>
+                            <li class="ontext"><a href="/help/15/">常见问题</a></li>
+                            <li class="ontext"><a href="/help/27/">投诉建议</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <p class="tc lh200">
+                <a href="#">关于我们</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="">联系我们</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="">网络联盟</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="">商家入驻</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="">网络招聘</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="">广告服务</a>&nbsp;&nbsp;|
+                <br />
+                互联网出版许可证编号新出网证 <a href="#" target="_blank" rel="external nofollow">鄂ICP备11111111111号-2</a> ©山寨淘宝<br>
+                鄂公网安备888888888888号
+            </p>
+        </div>
+    </footer>
+    <script src="/assets/lib/jquery/jquery-1.11.0.js"></script>
+    <script src="/assets/lib/bootstrap/js/bootstrap.js"></script>
+    <script src="../assets/lib/cookie/jquery.cookie.js"></script>
+    <script>
+        //退出登录
+        $("#logout").click(function () {
+            if (confirm("确定退出?")) {
+                $.get("../handler/LogOut.ashx", "", function (data) {
+                    if (data == "ok") {
+                        window.location.reload();
+                    }
+                })
+            }
+        })
+        //注销
+        $("#shutdown").click(function () {
+            if (confirm("确定注销?")) {
+                if (confirm("注销后将删除所有资料")) {
+                    $.get("../handler/Shutdown.ashx", "", function (data) {
+                        if (data == "ok") {
+                            window.location.reload();
+                        }
+                    })
+                }
+            }
+        })
+    </script>
+    <asp:ContentPlaceHolder runat="server" ID="foot"></asp:ContentPlaceHolder>
+</body>
+</html>

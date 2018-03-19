@@ -1,0 +1,2586 @@
+﻿<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4A9EF51F-3658-4F86-8F00-DDAF68CF9C43}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Web</RootNamespace>
+    <AssemblyName>Web</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>2.5</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="admin\CategoryList.aspx" />
+    <Content Include="admin\CategoryAdd.aspx" />
+    <Content Include="admin\Index.aspx" />
+    <Content Include="assets\img\bg-mbl.jpg" />
+    <Content Include="assets\img\bg.jpg" />
+    <Content Include="assets\js\datapattern.js" />
+    <Content Include="assets\js\LinkOpen.js" />
+    <Content Include="assets\lib\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="assets\lib\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="assets\lib\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="assets\lib\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="assets\lib\bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="assets\lib\ckeditor\CHANGES.md" />
+    <Content Include="assets\lib\ckeditor\LICENSE.md" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lib\highlight\CHANGES.md" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lib\highlight\LICENSE" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lib\highlight\README.md" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lib\highlight\README.ru.md" />
+    <Content Include="assets\lib\ckeditor\plugins\pbckcode\.gitignore" />
+    <Content Include="assets\lib\ckeditor\plugins\pbckcode\CHANGELOG.md" />
+    <Content Include="assets\lib\ckeditor\plugins\pbckcode\icons\pbckcode.psd" />
+    <Content Include="assets\lib\ckeditor\plugins\pbckcode\LICENSE" />
+    <Content Include="assets\lib\ckeditor\plugins\pbckcode\README.md" />
+    <Content Include="assets\lib\ckeditor\plugins\scayt\LICENSE.md" />
+    <Content Include="assets\lib\ckeditor\plugins\scayt\README.md" />
+    <Content Include="assets\lib\ckeditor\plugins\wsc\LICENSE.md" />
+    <Content Include="assets\lib\ckeditor\plugins\wsc\README.md" />
+    <Content Include="assets\lib\ckeditor\README.md" />
+    <Content Include="assets\lib\ckeditor\samples\plugins\htmlwriter\assets\outputforflash\outputforflash.fla" />
+    <Content Include="assets\lib\ckeditor\skins\atlas\dev\icons16.svg" />
+    <Content Include="assets\lib\ckeditor\skins\atlas\dev\icons32.svg" />
+    <Content Include="assets\lib\ckeditor\skins\atlas\dev\locations.json" />
+    <Content Include="assets\lib\ckeditor\skins\atlas\readme.md" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\dev\icons16.svg" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\dev\icons32.svg" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\dev\locations.json" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\readme.md" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\scss\browser-specific\gecko\editor_gecko.scss" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\scss\browser-specific\ie7\dialog_ie7.scss" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\scss\browser-specific\ie7\editor_ie7.scss" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\scss\browser-specific\ie8\dialog_ie8.scss" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\scss\browser-specific\ie8\editor_ie8.scss" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\scss\browser-specific\iequirks\dialog_iequirks.scss" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\scss\browser-specific\iequirks\editor_iequirks.scss" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\scss\browser-specific\ie\dialog_ie.scss" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\scss\browser-specific\ie\editor_ie.scss" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\scss\browser-specific\opera\dialog_opera.scss" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\scss\components\editor.scss" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\scss\components\_colorpanel.scss" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\scss\components\_elementspath.scss" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\scss\components\_mainui.scss" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\scss\components\_menu.scss" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\scss\components\_panel.scss" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\scss\components\_presets.scss" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\scss\components\_reset.scss" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\scss\components\_richcombo.scss" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\scss\components\_toolbar.scss" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\scss\config\_colors.scss" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\scss\config\_config.scss" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\scss\config\_defaults.scss" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\scss\dialog\dialog.scss" />
+    <Content Include="assets\lib\ckeditor\skins\kama\readme.md" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\readme.md" />
+    <Content Include="assets\lib\ckeditor\skins\moono-color\readme.md" />
+    <Content Include="assets\lib\ckeditor\skins\moono\readme.md" />
+    <Content Include="assets\lib\H-ui\404.html" />
+    <Content Include="assets\lib\H-ui\favicon.ico" />
+    <Content Include="assets\lib\H-ui\lib\datatables\1.10.0\jquery.dataTables.min.js" />
+    <Content Include="assets\lib\H-ui\lib\DD_belatedPNG_0.0.8a-min.js" />
+    <Content Include="assets\lib\H-ui\lib\echarts\3.4.0\echarts.common.min.js" />
+    <Content Include="assets\lib\H-ui\lib\expressInstall.swf" />
+    <Content Include="assets\lib\H-ui\lib\hcharts\Highcharts\5.0.6\js\highcharts-3d.js" />
+    <Content Include="assets\lib\H-ui\lib\hcharts\Highcharts\5.0.6\js\highcharts-more.js" />
+    <Content Include="assets\lib\H-ui\lib\hcharts\Highcharts\5.0.6\js\highcharts.js" />
+    <Content Include="assets\lib\H-ui\lib\hcharts\Highcharts\5.0.6\js\modules\accessibility.js" />
+    <Content Include="assets\lib\H-ui\lib\hcharts\Highcharts\5.0.6\js\modules\accessibility.src.js" />
+    <Content Include="assets\lib\H-ui\lib\hcharts\Highcharts\5.0.6\js\modules\annotations.js" />
+    <Content Include="assets\lib\H-ui\lib\hcharts\Highcharts\5.0.6\js\modules\annotations.src.js" />
+    <Content Include="assets\lib\H-ui\lib\hcharts\Highcharts\5.0.6\js\modules\boost.js" />
+    <Content Include="assets\lib\H-ui\lib\hcharts\Highcharts\5.0.6\js\modules\boost.src.js" />
+    <Content Include="assets\lib\H-ui\lib\hcharts\Highcharts\5.0.6\js\modules\broken-axis.js" />
+    <Content Include="assets\lib\H-ui\lib\hcharts\Highcharts\5.0.6\js\modules\broken-axis.src.js" />
+    <Content Include="assets\lib\H-ui\lib\hcharts\Highcharts\5.0.6\js\modules\data.js" />
+    <Content Include="assets\lib\H-ui\lib\hcharts\Highcharts\5.0.6\js\modules\data.src.js" />
+    <Content Include="assets\lib\H-ui\lib\hcharts\Highcharts\5.0.6\js\modules\drilldown.js" />
+    <Content Include="assets\lib\H-ui\lib\hcharts\Highcharts\5.0.6\js\modules\drilldown.src.js" />
+    <Content Include="assets\lib\H-ui\lib\hcharts\Highcharts\5.0.6\js\modules\exporting.js" />
+    <Content Include="assets\lib\H-ui\lib\hcharts\Highcharts\5.0.6\js\modules\exporting.src.js" />
+    <Content Include="assets\lib\H-ui\lib\hcharts\Highcharts\5.0.6\js\modules\funnel.js" />
+    <Content Include="assets\lib\H-ui\lib\hcharts\Highcharts\5.0.6\js\modules\funnel.src.js" />
+    <Content Include="assets\lib\H-ui\lib\hcharts\Highcharts\5.0.6\js\modules\gantt.js" />
+    <Content Include="assets\lib\H-ui\lib\hcharts\Highcharts\5.0.6\js\modules\gantt.src.js" />
+    <Content Include="assets\lib\H-ui\lib\hcharts\Highcharts\5.0.6\js\modules\grid-axis.js" />
+    <Content Include="assets\lib\H-ui\lib\hcharts\Highcharts\5.0.6\js\modules\grid-axis.src.js" />
+    <Content Include="assets\lib\H-ui\lib\hcharts\Highcharts\5.0.6\js\modules\heatmap.js" />
+    <Content Include="assets\lib\H-ui\lib\hcharts\Highcharts\5.0.6\js\modules\heatmap.src.js" />
+    <Content Include="assets\lib\H-ui\lib\hcharts\Highcharts\5.0.6\js\modules\no-data-to-display.js" />
+    <Content Include="assets\lib\H-ui\lib\hcharts\Highcharts\5.0.6\js\modules\no-data-to-display.src.js" />
+    <Content Include="assets\lib\H-ui\lib\hcharts\Highcharts\5.0.6\js\modules\offline-exporting.js" />
+    <Content Include="assets\lib\H-ui\lib\hcharts\Highcharts\5.0.6\js\modules\offline-exporting.src.js" />
+    <Content Include="assets\lib\H-ui\lib\hcharts\Highcharts\5.0.6\js\modules\overlapping-datalabels.js" />
+    <Content Include="assets\lib\H-ui\lib\hcharts\Highcharts\5.0.6\js\modules\overlapping-datalabels.src.js" />
+    <Content Include="assets\lib\H-ui\lib\hcharts\Highcharts\5.0.6\js\modules\series-label.js" />
+    <Content Include="assets\lib\H-ui\lib\hcharts\Highcharts\5.0.6\js\modules\series-label.src.js" />
+    <Content Include="assets\lib\H-ui\lib\hcharts\Highcharts\5.0.6\js\modules\solid-gauge.js" />
+    <Content Include="assets\lib\H-ui\lib\hcharts\Highcharts\5.0.6\js\modules\solid-gauge.src.js" />
+    <Content Include="assets\lib\H-ui\lib\hcharts\Highcharts\5.0.6\js\modules\treemap.js" />
+    <Content Include="assets\lib\H-ui\lib\hcharts\Highcharts\5.0.6\js\modules\treemap.src.js" />
+    <Content Include="assets\lib\H-ui\lib\hcharts\Highcharts\5.0.6\js\modules\xrange-series.js" />
+    <Content Include="assets\lib\H-ui\lib\hcharts\Highcharts\5.0.6\js\modules\xrange-series.src.js" />
+    <Content Include="assets\lib\H-ui\lib\hcharts\Highcharts\5.0.6\js\themes\dark-blue.js" />
+    <Content Include="assets\lib\H-ui\lib\hcharts\Highcharts\5.0.6\js\themes\dark-green.js" />
+    <Content Include="assets\lib\H-ui\lib\hcharts\Highcharts\5.0.6\js\themes\dark-unica.js" />
+    <Content Include="assets\lib\H-ui\lib\hcharts\Highcharts\5.0.6\js\themes\gray.js" />
+    <Content Include="assets\lib\H-ui\lib\hcharts\Highcharts\5.0.6\js\themes\grid-light.js" />
+    <Content Include="assets\lib\H-ui\lib\hcharts\Highcharts\5.0.6\js\themes\grid.js" />
+    <Content Include="assets\lib\H-ui\lib\hcharts\Highcharts\5.0.6\js\themes\sand-signika.js" />
+    <Content Include="assets\lib\H-ui\lib\hcharts\Highcharts\5.0.6\js\themes\skies.js" />
+    <Content Include="assets\lib\H-ui\lib\hcharts\Highcharts\5.0.6\readme.txt" />
+    <Content Include="assets\lib\H-ui\lib\html5shiv.js" />
+    <Content Include="assets\lib\H-ui\lib\Hui-iconfont\1.0.8\demo.html" />
+    <Content Include="assets\lib\H-ui\lib\Hui-iconfont\1.0.8\iconfont.css" />
+    <Content Include="assets\lib\H-ui\lib\Hui-iconfont\1.0.8\iconfont.min.css" />
+    <Content Include="assets\lib\H-ui\lib\jquery.contextmenu\jquery.contextmenu.r2.js" />
+    <Content Include="assets\lib\H-ui\lib\jquery.SuperSlide\2.1.1\jquery.SuperSlide.min.js" />
+    <Content Include="assets\lib\H-ui\lib\jquery.validation\1.14.0\additional-methods.js" />
+    <Content Include="assets\lib\H-ui\lib\jquery.validation\1.14.0\jquery.validate.js" />
+    <Content Include="assets\lib\H-ui\lib\jquery.validation\1.14.0\messages_zh.js" />
+    <Content Include="assets\lib\H-ui\lib\jquery.validation\1.14.0\validate-methods.js" />
+    <Content Include="assets\lib\H-ui\lib\jquery\1.9.1\jquery.js" />
+    <Content Include="assets\lib\H-ui\lib\jquery\1.9.1\jquery.min.js" />
+    <Content Include="assets\lib\H-ui\lib\jselect-1.0.js" />
+    <Content Include="assets\lib\H-ui\lib\layer\2.4\layer.js" />
+    <Content Include="assets\lib\H-ui\lib\layer\2.4\skin\default\icon-ext.png" />
+    <Content Include="assets\lib\H-ui\lib\layer\2.4\skin\default\icon.png" />
+    <Content Include="assets\lib\H-ui\lib\layer\2.4\skin\default\loading-0.gif" />
+    <Content Include="assets\lib\H-ui\lib\layer\2.4\skin\default\loading-1.gif" />
+    <Content Include="assets\lib\H-ui\lib\layer\2.4\skin\default\loading-2.gif" />
+    <Content Include="assets\lib\H-ui\lib\layer\2.4\skin\layer.css" />
+    <Content Include="assets\lib\H-ui\lib\laypage\1.2\laypage.js" />
+    <Content Include="assets\lib\H-ui\lib\laypage\1.2\skin\laypage.css" />
+    <Content Include="assets\lib\H-ui\lib\lightbox2\2.8.1\css\lightbox.css" />
+    <Content Include="assets\lib\H-ui\lib\lightbox2\2.8.1\examples.html" />
+    <Content Include="assets\lib\H-ui\lib\lightbox2\2.8.1\images\close.png" />
+    <Content Include="assets\lib\H-ui\lib\lightbox2\2.8.1\images\loading.gif" />
+    <Content Include="assets\lib\H-ui\lib\lightbox2\2.8.1\images\next.png" />
+    <Content Include="assets\lib\H-ui\lib\lightbox2\2.8.1\images\prev.png" />
+    <Content Include="assets\lib\H-ui\lib\lightbox2\2.8.1\js\lightbox-plus-jquery.js" />
+    <Content Include="assets\lib\H-ui\lib\lightbox2\2.8.1\js\lightbox-plus-jquery.min.js" />
+    <Content Include="assets\lib\H-ui\lib\lightbox2\2.8.1\js\lightbox.js" />
+    <Content Include="assets\lib\H-ui\lib\lightbox2\2.8.1\js\lightbox.min.js" />
+    <Content Include="assets\lib\H-ui\lib\My97DatePicker\4.8\calendar.js" />
+    <Content Include="assets\lib\H-ui\lib\My97DatePicker\4.8\lang\en.js" />
+    <Content Include="assets\lib\H-ui\lib\My97DatePicker\4.8\lang\zh-cn.js" />
+    <Content Include="assets\lib\H-ui\lib\My97DatePicker\4.8\lang\zh-tw.js" />
+    <Content Include="assets\lib\H-ui\lib\My97DatePicker\4.8\skin\datePicker.gif" />
+    <Content Include="assets\lib\H-ui\lib\My97DatePicker\4.8\skin\default\datepicker.css" />
+    <Content Include="assets\lib\H-ui\lib\My97DatePicker\4.8\skin\default\img.gif" />
+    <Content Include="assets\lib\H-ui\lib\My97DatePicker\4.8\skin\twoer\datepicker-dev.css" />
+    <Content Include="assets\lib\H-ui\lib\My97DatePicker\4.8\skin\twoer\datepicker.css" />
+    <Content Include="assets\lib\H-ui\lib\My97DatePicker\4.8\skin\twoer\img.gif" />
+    <Content Include="assets\lib\H-ui\lib\My97DatePicker\4.8\skin\twoer\img.png" />
+    <Content Include="assets\lib\H-ui\lib\My97DatePicker\4.8\skin\WdatePicker.css" />
+    <Content Include="assets\lib\H-ui\lib\My97DatePicker\4.8\skin\whyGreen\bg.jpg" />
+    <Content Include="assets\lib\H-ui\lib\My97DatePicker\4.8\skin\whyGreen\datepicker.css" />
+    <Content Include="assets\lib\H-ui\lib\My97DatePicker\4.8\skin\whyGreen\img.gif" />
+    <Content Include="assets\lib\H-ui\lib\My97DatePicker\4.8\WdatePicker.js" />
+    <Content Include="assets\lib\H-ui\lib\nprogress\0.2.0\nprogress.css" />
+    <Content Include="assets\lib\H-ui\lib\nprogress\0.2.0\nprogress.js" />
+    <Content Include="assets\lib\H-ui\lib\nprogress\0.2.0\nprogress.min.css" />
+    <Content Include="assets\lib\H-ui\lib\nprogress\0.2.0\nprogress.min.js" />
+    <Content Include="assets\lib\H-ui\lib\respond.min.js" />
+    <Content Include="assets\lib\H-ui\lib\squid.js" />
+    <Content Include="assets\lib\H-ui\lib\swfobject.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\anchor\anchor.html" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\attachment\attachment.css" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\attachment\attachment.html" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\attachment\attachment.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\attachment\fileTypeImages\icon_chm.gif" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\attachment\fileTypeImages\icon_default.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\attachment\fileTypeImages\icon_doc.gif" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\attachment\fileTypeImages\icon_exe.gif" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\attachment\fileTypeImages\icon_jpg.gif" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\attachment\fileTypeImages\icon_mp3.gif" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\attachment\fileTypeImages\icon_mv.gif" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\attachment\fileTypeImages\icon_pdf.gif" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\attachment\fileTypeImages\icon_ppt.gif" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\attachment\fileTypeImages\icon_psd.gif" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\attachment\fileTypeImages\icon_rar.gif" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\attachment\fileTypeImages\icon_txt.gif" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\attachment\fileTypeImages\icon_xls.gif" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\attachment\images\alignicon.gif" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\attachment\images\alignicon.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\attachment\images\bg.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\attachment\images\file-icons.gif" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\attachment\images\file-icons.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\attachment\images\icons.gif" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\attachment\images\icons.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\attachment\images\image.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\attachment\images\progress.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\attachment\images\success.gif" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\attachment\images\success.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\background\background.css" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\background\background.html" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\background\background.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\background\images\bg.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\background\images\success.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\charts\chart.config.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\charts\charts.css" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\charts\charts.html" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\charts\charts.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\charts\images\charts0.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\charts\images\charts1.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\charts\images\charts2.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\charts\images\charts3.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\charts\images\charts4.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\charts\images\charts5.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\emotion\emotion.css" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\emotion\emotion.html" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\emotion\emotion.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\emotion\images\0.gif" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\emotion\images\bface.gif" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\emotion\images\cface.gif" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\emotion\images\fface.gif" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\emotion\images\jxface2.gif" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\emotion\images\neweditor-tab-bg.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\emotion\images\tface.gif" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\emotion\images\wface.gif" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\emotion\images\yface.gif" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\gmap\gmap.html" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\help\help.css" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\help\help.html" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\help\help.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\image\image.css" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\image\image.html" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\image\image.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\image\images\alignicon.jpg" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\image\images\bg.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\image\images\icons.gif" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\image\images\icons.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\image\images\image.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\image\images\progress.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\image\images\success.gif" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\image\images\success.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\insertframe\insertframe.html" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\internal.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\link\link.html" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\map\map.html" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\map\show.html" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\music\music.css" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\music\music.html" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\music\music.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\preview\preview.html" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\scrawl\images\addimg.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\scrawl\images\brush.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\scrawl\images\delimg.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\scrawl\images\delimgH.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\scrawl\images\empty.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\scrawl\images\emptyH.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\scrawl\images\eraser.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\scrawl\images\redo.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\scrawl\images\redoH.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\scrawl\images\scale.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\scrawl\images\scaleH.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\scrawl\images\size.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\scrawl\images\undo.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\scrawl\images\undoH.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\scrawl\scrawl.css" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\scrawl\scrawl.html" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\scrawl\scrawl.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\searchreplace\searchreplace.html" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\searchreplace\searchreplace.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\snapscreen\snapscreen.html" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\spechars\spechars.html" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\spechars\spechars.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\table\dragicon.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\table\edittable.css" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\table\edittable.html" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\table\edittable.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\table\edittd.html" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\table\edittip.html" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\template\config.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\template\images\bg.gif" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\template\images\pre0.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\template\images\pre1.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\template\images\pre2.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\template\images\pre3.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\template\images\pre4.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\template\template.css" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\template\template.html" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\template\template.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\video\images\bg.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\video\images\center_focus.jpg" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\video\images\file-icons.gif" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\video\images\file-icons.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\video\images\icons.gif" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\video\images\icons.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\video\images\image.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\video\images\left_focus.jpg" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\video\images\none_focus.jpg" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\video\images\progress.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\video\images\right_focus.jpg" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\video\images\success.gif" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\video\images\success.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\video\video.css" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\video\video.html" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\video\video.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\webapp\webapp.html" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\wordimage\fClipboard_ueditor.swf" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\wordimage\imageUploader.swf" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\wordimage\tangram.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\wordimage\wordimage.html" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\dialogs\wordimage\wordimage.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\index.html" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\jsp\lib\commons-codec-1.9.jar" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\jsp\lib\commons-fileupload-1.3.1.jar" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\jsp\lib\commons-io-2.4.jar" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\jsp\lib\json.jar" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\jsp\lib\ueditor-1.1.1.jar" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\jsp\src\com\baidu\ueditor\ActionEnter.java" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\jsp\src\com\baidu\ueditor\ConfigManager.java" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\jsp\src\com\baidu\ueditor\define\ActionMap.java" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\jsp\src\com\baidu\ueditor\define\ActionState.java" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\jsp\src\com\baidu\ueditor\define\AppInfo.java" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\jsp\src\com\baidu\ueditor\define\BaseState.java" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\jsp\src\com\baidu\ueditor\define\FileType.java" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\jsp\src\com\baidu\ueditor\define\MIMEType.java" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\jsp\src\com\baidu\ueditor\define\MultiState.java" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\jsp\src\com\baidu\ueditor\define\State.java" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\jsp\src\com\baidu\ueditor\Encoder.java" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\jsp\src\com\baidu\ueditor\hunter\FileManager.java" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\jsp\src\com\baidu\ueditor\hunter\ImageHunter.java" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\jsp\src\com\baidu\ueditor\PathFormat.java" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\jsp\src\com\baidu\ueditor\upload\Base64Uploader.java" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\jsp\src\com\baidu\ueditor\upload\BinaryUploader.java" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\jsp\src\com\baidu\ueditor\upload\StorageManager.java" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\jsp\src\com\baidu\ueditor\upload\Uploader.java" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\lang\en\en.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\lang\en\images\addimage.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\lang\en\images\alldeletebtnhoverskin.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\lang\en\images\alldeletebtnupskin.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\lang\en\images\background.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\lang\en\images\button.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\lang\en\images\copy.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\lang\en\images\deletedisable.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\lang\en\images\deleteenable.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\lang\en\images\listbackground.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\lang\en\images\localimage.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\lang\en\images\music.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\lang\en\images\rotateleftdisable.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\lang\en\images\rotateleftenable.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\lang\en\images\rotaterightdisable.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\lang\en\images\rotaterightenable.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\lang\en\images\upload.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\lang\zh-cn\images\copy.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\lang\zh-cn\images\localimage.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\lang\zh-cn\images\music.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\lang\zh-cn\images\upload.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\lang\zh-cn\zh-cn.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\net\Bin\Newtonsoft.Json.dll" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\net\Bin\Newtonsoft.Json.pdb" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\net\Bin\Newtonsoft.Json.xml" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\net\net.sln" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\php\action_crawler.php" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\php\action_list.php" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\php\action_upload.php" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\php\controller.php" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\php\Uploader.class.php" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\themes\default\css\ueditor.css" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\themes\default\css\ueditor.min.css" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\themes\default\dialogbase.css" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\themes\default\images\anchor.gif" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\themes\default\images\arrow.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\themes\default\images\arrow_down.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\themes\default\images\arrow_up.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\themes\default\images\button-bg.gif" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\themes\default\images\cancelbutton.gif" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\themes\default\images\charts.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\themes\default\images\cursor_h.gif" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\themes\default\images\cursor_h.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\themes\default\images\cursor_v.gif" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\themes\default\images\cursor_v.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\themes\default\images\dialog-title-bg.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\themes\default\images\filescan.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\themes\default\images\highlighted.gif" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\themes\default\images\icons-all.gif" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\themes\default\images\icons.gif" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\themes\default\images\icons.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\themes\default\images\loaderror.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\themes\default\images\loading.gif" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\themes\default\images\lock.gif" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\themes\default\images\neweditor-tab-bg.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\themes\default\images\pagebreak.gif" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\themes\default\images\scale.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\themes\default\images\sortable.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\themes\default\images\spacer.gif" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\themes\default\images\sparator_v.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\themes\default\images\table-cell-align.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\themes\default\images\tangram-colorpicker.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\themes\default\images\toolbar_bg.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\themes\default\images\unhighlighted.gif" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\themes\default\images\upload.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\themes\default\images\videologo.gif" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\themes\default\images\word.gif" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\themes\default\images\wordpaste.png" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\themes\iframe.css" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\codemirror\codemirror.css" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\codemirror\codemirror.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\highcharts\adapters\mootools-adapter.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\highcharts\adapters\mootools-adapter.src.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\highcharts\adapters\prototype-adapter.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\highcharts\adapters\prototype-adapter.src.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\highcharts\adapters\standalone-framework.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\highcharts\adapters\standalone-framework.src.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\highcharts\highcharts-more.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\highcharts\highcharts-more.src.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\highcharts\highcharts.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\highcharts\highcharts.src.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\highcharts\modules\annotations.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\highcharts\modules\annotations.src.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\highcharts\modules\canvas-tools.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\highcharts\modules\canvas-tools.src.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\highcharts\modules\data.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\highcharts\modules\data.src.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\highcharts\modules\drilldown.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\highcharts\modules\drilldown.src.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\highcharts\modules\exporting.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\highcharts\modules\exporting.src.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\highcharts\modules\funnel.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\highcharts\modules\funnel.src.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\highcharts\modules\heatmap.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\highcharts\modules\heatmap.src.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\highcharts\modules\map.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\highcharts\modules\map.src.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\highcharts\modules\no-data-to-display.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\highcharts\modules\no-data-to-display.src.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\highcharts\themes\dark-blue.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\highcharts\themes\dark-green.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\highcharts\themes\gray.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\highcharts\themes\grid.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\highcharts\themes\skies.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\jquery-1.10.2.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\jquery-1.10.2.min.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\snapscreen\UEditorSnapscreen.exe" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\SyntaxHighlighter\shCore.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\SyntaxHighlighter\shCoreDefault.css" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\video-js\video-js.css" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\video-js\video-js.min.css" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\video-js\video-js.swf" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\video-js\video.dev.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\video-js\video.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\webuploader\Uploader.swf" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\webuploader\webuploader.css" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\webuploader\webuploader.custom.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\webuploader\webuploader.custom.min.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\webuploader\webuploader.flashonly.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\webuploader\webuploader.flashonly.min.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\webuploader\webuploader.html5only.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\webuploader\webuploader.html5only.min.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\webuploader\webuploader.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\webuploader\webuploader.min.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\webuploader\webuploader.withoutimage.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\webuploader\webuploader.withoutimage.min.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\zeroclipboard\ZeroClipboard.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\zeroclipboard\ZeroClipboard.min.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\zeroclipboard\ZeroClipboard.swf" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\ueditor.all.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\ueditor.all.min.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\ueditor.config.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\ueditor.parse.js" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\ueditor.parse.min.js" />
+    <Content Include="assets\lib\H-ui\lib\webuploader\0.1.5\cropper\cropper.js" />
+    <Content Include="assets\lib\H-ui\lib\webuploader\0.1.5\cropper\index.html" />
+    <Content Include="assets\lib\H-ui\lib\webuploader\0.1.5\cropper\uploader.js" />
+    <Content Include="assets\lib\H-ui\lib\webuploader\0.1.5\expressInstall.swf" />
+    <Content Include="assets\lib\H-ui\lib\webuploader\0.1.5\image-upload\index.html" />
+    <Content Include="assets\lib\H-ui\lib\webuploader\0.1.5\image-upload\upload.js" />
+    <Content Include="assets\lib\H-ui\lib\webuploader\0.1.5\images\bg.png" />
+    <Content Include="assets\lib\H-ui\lib\webuploader\0.1.5\images\icons.png" />
+    <Content Include="assets\lib\H-ui\lib\webuploader\0.1.5\images\image.png" />
+    <Content Include="assets\lib\H-ui\lib\webuploader\0.1.5\images\progress.png" />
+    <Content Include="assets\lib\H-ui\lib\webuploader\0.1.5\images\success.png" />
+    <Content Include="assets\lib\H-ui\lib\webuploader\0.1.5\md5-demo\index.html" />
+    <Content Include="assets\lib\H-ui\lib\webuploader\0.1.5\md5-demo\script.js" />
+    <Content Include="assets\lib\H-ui\lib\webuploader\0.1.5\requirejs\app.js" />
+    <Content Include="assets\lib\H-ui\lib\webuploader\0.1.5\requirejs\index.html" />
+    <Content Include="assets\lib\H-ui\lib\webuploader\0.1.5\requirejs\require.js" />
+    <Content Include="assets\lib\H-ui\lib\webuploader\0.1.5\server\crossdomain.xml" />
+    <Content Include="assets\lib\H-ui\lib\webuploader\0.1.5\server\fileupload.php" />
+    <Content Include="assets\lib\H-ui\lib\webuploader\0.1.5\server\fileupload2.php" />
+    <Content Include="assets\lib\H-ui\lib\webuploader\0.1.5\server\preview.php" />
+    <Content Include="assets\lib\H-ui\lib\webuploader\0.1.5\Uploader.swf" />
+    <Content Include="assets\lib\H-ui\lib\webuploader\0.1.5\webuploader.css" />
+    <Content Include="assets\lib\H-ui\lib\webuploader\0.1.5\webuploader.custom.js" />
+    <Content Include="assets\lib\H-ui\lib\webuploader\0.1.5\webuploader.custom.min.js" />
+    <Content Include="assets\lib\H-ui\lib\webuploader\0.1.5\webuploader.fis.js" />
+    <Content Include="assets\lib\H-ui\lib\webuploader\0.1.5\webuploader.flashonly.js" />
+    <Content Include="assets\lib\H-ui\lib\webuploader\0.1.5\webuploader.flashonly.min.js" />
+    <Content Include="assets\lib\H-ui\lib\webuploader\0.1.5\webuploader.html5only.js" />
+    <Content Include="assets\lib\H-ui\lib\webuploader\0.1.5\webuploader.html5only.min.js" />
+    <Content Include="assets\lib\H-ui\lib\webuploader\0.1.5\webuploader.js" />
+    <Content Include="assets\lib\H-ui\lib\webuploader\0.1.5\webuploader.min.js" />
+    <Content Include="assets\lib\H-ui\lib\webuploader\0.1.5\webuploader.noimage.js" />
+    <Content Include="assets\lib\H-ui\lib\webuploader\0.1.5\webuploader.noimage.min.js" />
+    <Content Include="assets\lib\H-ui\lib\webuploader\0.1.5\webuploader.nolog.js" />
+    <Content Include="assets\lib\H-ui\lib\webuploader\0.1.5\webuploader.nolog.min.js" />
+    <Content Include="assets\lib\H-ui\lib\webuploader\0.1.5\webuploader.withoutimage.js" />
+    <Content Include="assets\lib\H-ui\lib\webuploader\0.1.5\webuploader.withoutimage.min.js" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\apiCss\api.js" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\apiCss\common.css" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\apiCss\common_ie6.css" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\apiCss\img\apiMenu.gif" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\apiCss\img\apiMenu.png" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\apiCss\img\background.jpg" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\apiCss\img\chinese.png" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\apiCss\img\close.png" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\apiCss\img\contact-bg.png" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\apiCss\img\english.png" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\apiCss\img\header-bg.png" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\apiCss\img\lightbulb.png" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\apiCss\img\overlay_arrow.gif" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\apiCss\img\overlay_arrow.png" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\apiCss\img\overlay_bg.png" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\apiCss\img\overlay_close_IE6.gif" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\apiCss\img\zTreeStandard.gif" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\apiCss\img\zTreeStandard.png" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\apiCss\jquery-1.6.2.min.js" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\apiCss\jquery.ztree.core-3.5.js" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\apiCss\zTreeStyleForApi.css" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\API_cn.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\API_en.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\fn.zTree.destroy.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\fn.zTree.getZTreeObj.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\fn.zTree.init.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\fn.zTree._z.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.async.autoParam.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.async.contentType.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.async.dataFilter.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.async.dataType.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.async.enable.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.async.otherParam.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.async.type.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.async.url.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.callback.beforeAsync.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.callback.beforeCheck.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.callback.beforeClick.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.callback.beforeCollapse.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.callback.beforeDblClick.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.callback.beforeDrag.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.callback.beforeDragOpen.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.callback.beforeDrop.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.callback.beforeEditName.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.callback.beforeExpand.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.callback.beforeMouseDown.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.callback.beforeMouseUp.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.callback.beforeRemove.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.callback.beforeRename.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.callback.beforeRightClick.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.callback.onAsyncError.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.callback.onAsyncSuccess.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.callback.onCheck.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.callback.onClick.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.callback.onCollapse.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.callback.onDblClick.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.callback.onDrag.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.callback.onDragMove.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.callback.onDrop.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.callback.onExpand.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.callback.onMouseDown.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.callback.onMouseUp.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.callback.onNodeCreated.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.callback.onRemove.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.callback.onRename.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.callback.onRightClick.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.check.autoCheckTrigger.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.check.chkboxType.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.check.chkDisabledInherit.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.check.chkStyle.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.check.enable.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.check.nocheckInherit.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.check.radioType.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.data.keep.leaf.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.data.keep.parent.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.data.key.checked.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.data.key.children.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.data.key.name.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.data.key.title.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.data.key.url.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.data.simpleData.enable.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.data.simpleData.idKey.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.data.simpleData.pIdKey.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.data.simpleData.rootPId.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.edit.drag.autoExpandTrigger.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.edit.drag.autoOpenTime.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.edit.drag.borderMax.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.edit.drag.borderMin.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.edit.drag.inner.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.edit.drag.isCopy.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.edit.drag.isMove.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.edit.drag.maxShowNodeNum.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.edit.drag.minMoveSize.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.edit.drag.next.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.edit.drag.prev.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.edit.editNameSelectAll.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.edit.enable.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.edit.removeTitle.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.edit.renameTitle.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.edit.showRemoveBtn.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.edit.showRenameBtn.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.treeId.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.treeObj.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.view.addDiyDom.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.view.addHoverDom.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.view.autoCancelSelected.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.view.dblClickExpand.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.view.expandSpeed.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.view.fontCss.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.view.nameIsHTML.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.view.removeHoverDom.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.view.selectedMulti.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.view.showIcon.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.view.showLine.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.view.showTitle.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\setting.view.txtSelectedEnable.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\treeNode.checked.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\treeNode.checkedOld.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\treeNode.check_Child_State.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\treeNode.check_Focus.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\treeNode.children.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\treeNode.chkDisabled.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\treeNode.click.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\treeNode.diy.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\treeNode.editNameFlag.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\treeNode.getCheckStatus.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\treeNode.getNextNode.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\treeNode.getParentNode.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\treeNode.getPreNode.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\treeNode.halfCheck.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\treeNode.icon.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\treeNode.iconClose.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\treeNode.iconOpen.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\treeNode.iconSkin.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\treeNode.isAjaxing.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\treeNode.isFirstNode.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\treeNode.isHidden.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\treeNode.isHover.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\treeNode.isLastNode.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\treeNode.isParent.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\treeNode.level.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\treeNode.name.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\treeNode.nocheck.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\treeNode.open.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\treeNode.parentTId.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\treeNode.target.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\treeNode.tId.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\treeNode.url.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\treeNode.zAsync.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\zTreeObj.addNodes.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\zTreeObj.cancelEditName.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\zTreeObj.cancelSelectedNode.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\zTreeObj.checkAllNodes.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\zTreeObj.checkNode.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\zTreeObj.copyNode.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\zTreeObj.destroy.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\zTreeObj.editName.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\zTreeObj.expandAll.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\zTreeObj.expandNode.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\zTreeObj.getChangeCheckedNodes.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\zTreeObj.getCheckedNodes.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\zTreeObj.getNodeByParam.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\zTreeObj.getNodeByTId.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\zTreeObj.getNodeIndex.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\zTreeObj.getNodes.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\zTreeObj.getNodesByFilter.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\zTreeObj.getNodesByParam.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\zTreeObj.getNodesByParamFuzzy.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\zTreeObj.getSelectedNodes.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\zTreeObj.hideNode.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\zTreeObj.hideNodes.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\zTreeObj.moveNode.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\zTreeObj.reAsyncChildNodes.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\zTreeObj.refresh.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\zTreeObj.removeChildNodes.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\zTreeObj.removeNode.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\zTreeObj.selectNode.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\zTreeObj.setChkDisabled.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\zTreeObj.setEditable.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\zTreeObj.setting.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\zTreeObj.showNode.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\zTreeObj.showNodes.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\zTreeObj.transformToArray.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\zTreeObj.transformTozTreeNodes.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\cn\zTreeObj.updateNode.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\fn.zTree.destroy.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\fn.zTree.getZTreeObj.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\fn.zTree.init.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\fn.zTree._z.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.async.autoParam.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.async.contentType.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.async.dataFilter.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.async.dataType.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.async.enable.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.async.otherParam.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.async.type.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.async.url.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.callback.beforeAsync.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.callback.beforeCheck.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.callback.beforeClick.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.callback.beforeCollapse.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.callback.beforeDblClick.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.callback.beforeDrag.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.callback.beforeDragOpen.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.callback.beforeDrop.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.callback.beforeEditName.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.callback.beforeExpand.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.callback.beforeMouseDown.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.callback.beforeMouseUp.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.callback.beforeRemove.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.callback.beforeRename.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.callback.beforeRightClick.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.callback.onAsyncError.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.callback.onAsyncSuccess.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.callback.onCheck.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.callback.onClick.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.callback.onCollapse.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.callback.onDblClick.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.callback.onDrag.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.callback.onDragMove.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.callback.onDrop.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.callback.onExpand.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.callback.onMouseDown.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.callback.onMouseUp.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.callback.onNodeCreated.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.callback.onRemove.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.callback.onRename.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.callback.onRightClick.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.check.autoCheckTrigger.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.check.chkboxType.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.check.chkDisabledInherit.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.check.chkStyle.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.check.enable.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.check.nocheckInherit.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.check.radioType.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.data.keep.leaf.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.data.keep.parent.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.data.key.checked.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.data.key.children.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.data.key.name.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.data.key.title.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.data.key.url.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.data.simpleData.enable.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.data.simpleData.idKey.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.data.simpleData.pIdKey.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.data.simpleData.rootPId.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.edit.drag.autoExpandTrigger.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.edit.drag.autoOpenTime.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.edit.drag.borderMax.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.edit.drag.borderMin.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.edit.drag.inner.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.edit.drag.isCopy.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.edit.drag.isMove.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.edit.drag.maxShowNodeNum.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.edit.drag.minMoveSize.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.edit.drag.next.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.edit.drag.prev.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.edit.editNameSelectAll.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.edit.enable.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.edit.removeTitle.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.edit.renameTitle.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.edit.showRemoveBtn.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.edit.showRenameBtn.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.treeId.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.treeObj.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.view.addDiyDom.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.view.addHoverDom.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.view.autoCancelSelected.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.view.dblClickExpand.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.view.expandSpeed.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.view.fontCss.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.view.nameIsHTML.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.view.removeHoverDom.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.view.selectedMulti.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.view.showIcon.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.view.showLine.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.view.showTitle.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\setting.view.txtSelectedEnable.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\treeNode.checked.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\treeNode.checkedOld.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\treeNode.check_Child_State.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\treeNode.check_Focus.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\treeNode.children.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\treeNode.chkDisabled.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\treeNode.click.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\treeNode.diy.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\treeNode.editNameFlag.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\treeNode.getCheckStatus.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\treeNode.getNextNode.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\treeNode.getParentNode.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\treeNode.getPreNode.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\treeNode.halfCheck.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\treeNode.icon.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\treeNode.iconClose.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\treeNode.iconOpen.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\treeNode.iconSkin.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\treeNode.isAjaxing.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\treeNode.isFirstNode.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\treeNode.isHidden.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\treeNode.isHover.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\treeNode.isLastNode.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\treeNode.isParent.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\treeNode.level.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\treeNode.name.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\treeNode.nocheck.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\treeNode.open.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\treeNode.parentTId.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\treeNode.target.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\treeNode.tId.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\treeNode.url.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\treeNode.zAsync.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\zTreeObj.addNodes.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\zTreeObj.cancelEditName.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\zTreeObj.cancelSelectedNode.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\zTreeObj.checkAllNodes.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\zTreeObj.checkNode.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\zTreeObj.copyNode.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\zTreeObj.destroy.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\zTreeObj.editName.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\zTreeObj.expandAll.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\zTreeObj.expandNode.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\zTreeObj.getChangeCheckedNodes.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\zTreeObj.getCheckedNodes.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\zTreeObj.getNodeByParam.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\zTreeObj.getNodeByTId.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\zTreeObj.getNodeIndex.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\zTreeObj.getNodes.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\zTreeObj.getNodesByFilter.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\zTreeObj.getNodesByParam.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\zTreeObj.getNodesByParamFuzzy.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\zTreeObj.getSelectedNodes.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\zTreeObj.hideNode.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\zTreeObj.hideNodes.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\zTreeObj.moveNode.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\zTreeObj.reAsyncChildNodes.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\zTreeObj.refresh.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\zTreeObj.removeChildNodes.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\zTreeObj.removeNode.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\zTreeObj.selectNode.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\zTreeObj.setChkDisabled.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\zTreeObj.setEditable.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\zTreeObj.setting.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\zTreeObj.showNode.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\zTreeObj.showNodes.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\zTreeObj.transformToArray.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\zTreeObj.transformTozTreeNodes.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\api\en\zTreeObj.updateNode.html" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\css\metroStyle\img\line_conn.png" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\css\metroStyle\img\loading.gif" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\css\metroStyle\img\metro.gif" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\css\metroStyle\img\metro.png" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\css\metroStyle\metroStyle.css" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\css\zTreeStyle\img\diy\1_close.png" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\css\zTreeStyle\img\diy\1_open.png" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\css\zTreeStyle\img\diy\2.png" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\css\zTreeStyle\img\diy\3.png" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\css\zTreeStyle\img\diy\4.png" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\css\zTreeStyle\img\diy\5.png" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\css\zTreeStyle\img\diy\6.png" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\css\zTreeStyle\img\diy\7.png" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\css\zTreeStyle\img\diy\8.png" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\css\zTreeStyle\img\diy\9.png" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\css\zTreeStyle\img\line_conn.gif" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\css\zTreeStyle\img\loading.gif" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\css\zTreeStyle\img\zTreeStandard.gif" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\css\zTreeStyle\img\zTreeStandard.png" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\css\zTreeStyle\zTreeStyle.css" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\js\jquery.ztree.all-3.5.js" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\js\jquery.ztree.all-3.5.min.js" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\js\jquery.ztree.core-3.5.js" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\js\jquery.ztree.core-3.5.min.js" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\js\jquery.ztree.excheck-3.5.js" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\js\jquery.ztree.excheck-3.5.min.js" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\js\jquery.ztree.exedit-3.5.js" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\js\jquery.ztree.exedit-3.5.min.js" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\js\jquery.ztree.exedit.js" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\js\jquery.ztree.exhide-3.5.js" />
+    <Content Include="assets\lib\H-ui\lib\zTree\v3\js\jquery.ztree.exhide-3.5.min.js" />
+    <Content Include="assets\lib\H-ui\static\h-ui.admin\css\H-ui.admin.css" />
+    <Content Include="assets\lib\H-ui\static\h-ui.admin\css\H-ui.login.css" />
+    <Content Include="assets\lib\H-ui\static\h-ui.admin\css\style.css" />
+    <Content Include="assets\lib\H-ui\static\h-ui.admin\images\acrossTab\acrossTab-2.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui.admin\images\admin-login-bg.jpg" />
+    <Content Include="assets\lib\H-ui\static\h-ui.admin\images\admin-loginform-bg.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui.admin\images\cn.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui.admin\images\loading.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui.admin\images\logo.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui.admin\images\um.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui.admin\js\de_DE.txt" />
+    <Content Include="assets\lib\H-ui\static\h-ui.admin\js\H-ui.admin.js" />
+    <Content Include="assets\lib\H-ui\static\h-ui.admin\skin\blue\acrossTab-bg.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui.admin\skin\blue\acrossTab.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui.admin\skin\blue\icon_arrow.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui.admin\skin\blue\skin.css" />
+    <Content Include="assets\lib\H-ui\static\h-ui.admin\skin\default\acrossTab-bg.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui.admin\skin\default\acrossTab.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui.admin\skin\default\icon_arrow.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui.admin\skin\default\skin.css" />
+    <Content Include="assets\lib\H-ui\static\h-ui.admin\skin\green\acrossTab-bg.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui.admin\skin\green\acrossTab.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui.admin\skin\green\icon_arrow.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui.admin\skin\green\skin.css" />
+    <Content Include="assets\lib\H-ui\static\h-ui.admin\skin\orange\acrossTab-bg.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui.admin\skin\orange\acrossTab.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui.admin\skin\orange\icon_arrow.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui.admin\skin\orange\skin.css" />
+    <Content Include="assets\lib\H-ui\static\h-ui.admin\skin\red\acrossTab-bg.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui.admin\skin\red\acrossTab.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui.admin\skin\red\icon_arrow.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui.admin\skin\red\skin.css" />
+    <Content Include="assets\lib\H-ui\static\h-ui.admin\skin\yellow\acrossTab-bg.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui.admin\skin\yellow\acrossTab.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui.admin\skin\yellow\icon_arrow.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui.admin\skin\yellow\skin.css" />
+    <Content Include="assets\lib\H-ui\static\h-ui\css\H-ui.css" />
+    <Content Include="assets\lib\H-ui\static\h-ui\css\H-ui.ie.css" />
+    <Content Include="assets\lib\H-ui\static\h-ui\css\H-ui.min.css" />
+    <Content Include="assets\lib\H-ui\static\h-ui\css\H-ui.reset.css" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\acrossTab\acrossTab-bg.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\acrossTab\acrossTab-close.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\acrossTab\acrossTab.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\dataTable\sort_asc.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\dataTable\sort_both.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\dataTable\sort_desc.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\dropDown\icon-jt.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\201.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\202.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\203.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\204.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\205.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\206.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\207.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\208.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\209.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\210.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\0.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\1.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\10.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\100.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\101.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\102.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\103.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\104.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\105.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\106.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\11.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\12.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\13.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\14.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\15.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\16.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\18.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\19.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\2.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\20.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\21.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\22.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\23.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\24.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\25.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\26.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\27.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\28.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\29.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\3.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\30.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\31.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\32.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\33.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\34.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\35.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\36.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\37.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\38.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\39.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\4.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\40.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\41.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\42.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\43.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\44.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\45.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\46.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\47.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\48.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\49.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\5.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\50.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\51.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\52.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\53.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\54.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\55.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\56.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\57.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\58.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\59.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\6.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\60.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\61.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\62.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\63.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\64.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\65.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\66.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\67.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\68.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\69.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\7.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\70.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\71.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\72.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\73.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\74.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\75.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\76.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\77.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\78.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\79.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\8.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\80.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\81.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\82.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\83.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\84.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\85.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\86.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\87.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\88.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\89.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\9.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\90.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\91.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\92.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\93.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\94.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\95.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\96.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\97.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\98.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\face\QQ\99.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\Hui-tags\empty.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\iCheck\aero%402x.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\iCheck\aero.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\iCheck\blue%402x.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\iCheck\blue.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\iCheck\green%402x.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\iCheck\green.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\iCheck\grey%402x.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\iCheck\grey.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\iCheck\minimal%402x.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\iCheck\minimal.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\iCheck\orange%402x.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\iCheck\orange.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\iCheck\pink%402x.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\iCheck\pink.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\iCheck\purple%402x.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\iCheck\purple.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\iCheck\red%402x.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\iCheck\red.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\iCheck\yellow%402x.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\iCheck\yellow.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\iconpic-arrow.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\jselect\iconpic-arrow-down2.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\loading\loading-b.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\loading\loading-s.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\rollpic\unslider-arrow.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\star\iconpic-star-S-default.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\star\iconpic-star-S.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\steps\step_arrow-active.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\steps\step_arrow.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\steps\step_bg-active.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\steps\step_bg.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\ucnter\avatar-default-S.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\ucnter\avatar-default.jpg" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\ucnter\avatar.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\ucnter\noavatar_small.gif" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\validform\iconpic-error.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\validform\iconpic-right.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\validform\iconpic-warning.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\verticalTab\tabNav-active.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\verticalTab\tabNav-hover.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\verticalTab\tabNav.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\verticalTab\tabNav_right-active.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\verticalTab\tabNav_right-hover.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\verticalTab\tabNav_right.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui\images\verticalTab\tab_bg.png" />
+    <Content Include="assets\lib\H-ui\static\h-ui\js\H-ui.js" />
+    <Content Include="assets\lib\H-ui\static\h-ui\js\H-ui.min.js" />
+    <Content Include="assets\lib\H-ui\temp\200x150.jpg" />
+    <Content Include="assets\lib\H-ui\temp\big\chai.jpg" />
+    <Content Include="assets\lib\H-ui\temp\big\chufang.jpg" />
+    <Content Include="assets\lib\H-ui\temp\big\keting.jpg" />
+    <Content Include="assets\lib\H-ui\temp\big\keting2.jpg" />
+    <Content Include="assets\lib\H-ui\temp\big\keting3.jpg" />
+    <Content Include="assets\lib\H-ui\temp\big\keting4.jpg" />
+    <Content Include="assets\lib\H-ui\temp\big\shouju.jpg" />
+    <Content Include="assets\lib\H-ui\temp\big\shufang.jpg" />
+    <Content Include="assets\lib\H-ui\temp\big\weishengjian.jpg" />
+    <Content Include="assets\lib\H-ui\temp\big\weishengjian2.jpg" />
+    <Content Include="assets\lib\H-ui\temp\big\woshi.jpg" />
+    <Content Include="assets\lib\H-ui\temp\big\youyongchi.jpg" />
+    <Content Include="assets\lib\H-ui\temp\brand\ambio.jpg" />
+    <Content Include="assets\lib\H-ui\temp\brand\dongpeng.jpeg" />
+    <Content Include="assets\lib\H-ui\temp\brand\shengxiang.jpg" />
+    <Content Include="assets\lib\H-ui\temp\product\Thumb\5345.jpg" />
+    <Content Include="assets\lib\H-ui\temp\product\Thumb\6204.jpg" />
+    <Content Include="assets\lib\H-ui\temp\Thumb\chai.jpg" />
+    <Content Include="assets\lib\H-ui\temp\Thumb\chufang.jpg" />
+    <Content Include="assets\lib\H-ui\temp\Thumb\keting.jpg" />
+    <Content Include="assets\lib\H-ui\temp\Thumb\keting2.jpg" />
+    <Content Include="assets\lib\H-ui\temp\Thumb\keting3.jpg" />
+    <Content Include="assets\lib\H-ui\temp\Thumb\keting4.jpg" />
+    <Content Include="assets\lib\H-ui\temp\Thumb\shouju.jpg" />
+    <Content Include="assets\lib\H-ui\temp\Thumb\shufang.jpg" />
+    <Content Include="assets\lib\H-ui\temp\Thumb\weishengjian.jpg" />
+    <Content Include="assets\lib\H-ui\temp\Thumb\weishengjian2.jpg" />
+    <Content Include="assets\lib\H-ui\temp\Thumb\woshi.jpg" />
+    <Content Include="assets\lib\H-ui\temp\Thumb\youyongchi.jpg" />
+    <Content Include="assets\lib\H-ui\【开发必读】文档目录.txt" />
+    <Content Include="favicon.ico" />
+    <Content Include="assets\lib\jquery\jquery-1.11.0.min.js.map" />
+    <Content Include="Focus.aspx" />
+    <Content Include="handler\CartUpdate.ashx" />
+    <Content Include="handler\DeleteCart.ashx" />
+    <Content Include="handler\Vcode.ashx" />
+    <Content Include="handler\LogOut.ashx" />
+    <Content Include="handler\Sign.ashx" />
+    <Content Include="handler\SaveAddress.ashx" />
+    <Content Include="handler\DeleteAddress.ashx" />
+    <Content Include="handler\DeleteOrder.ashx" />
+    <Content Include="member\Comment.aspx" />
+    <Content Include="PayResult.aspx" />
+    <Content Include="Search.aspx" />
+    <Content Include="shared\Error.aspx" />
+    <Content Include="www\AdminAdd.aspx" />
+    <Content Include="www\AdminEdit.aspx" />
+    <Content Include="www\AdminList.aspx" />
+    <Content Include="www\Ajax\Ajax.aspx" />
+    <Content Include="www\Ajax\Dapper.aspx" />
+    <Content Include="www\Ajax\Pager.aspx" />
+    <Content Include="www\CategoryAdd.aspx" />
+    <Content Include="www\CategoryEdit.aspx" />
+    <Content Include="www\CommentList.aspx" />
+    <Content Include="www\Login.aspx" />
+    <Content Include="www\CategoryList.aspx" />
+    <Content Include="www\Index.aspx" />
+    <Content Include="www\MemberAdd.aspx" />
+    <Content Include="www\MemberEdit.aspx" />
+    <Content Include="www\MemberList.aspx" />
+    <Content Include="www\OrderEdit.aspx" />
+    <Content Include="www\OrderList.aspx" />
+    <Content Include="www\ProductAdd.aspx" />
+    <Content Include="www\ProductEdit.aspx" />
+    <Content Include="www\ProductList.aspx" />
+    <Content Include="www\Welcome.aspx" />
+    <Content Include="assets\lib\H-ui\temp\Thumbs.db" />
+    <Content Include="assets\lib\H-ui\lib\hcharts\Highcharts\5.0.6\license.pdf" />
+    <Content Include="assets\lib\H-ui\lib\Hui-iconfont\1.0.8\iconfont.eot" />
+    <Content Include="assets\lib\H-ui\lib\Hui-iconfont\1.0.8\iconfont.svg" />
+    <Content Include="assets\lib\H-ui\lib\Hui-iconfont\1.0.8\iconfont.ttf" />
+    <Content Include="assets\lib\H-ui\lib\Hui-iconfont\1.0.8\iconfont.woff" />
+    <Content Include="assets\lib\H-ui\lib\lightbox2\2.8.1\js\lightbox-plus-jquery.min.map" />
+    <Content Include="assets\lib\H-ui\lib\lightbox2\2.8.1\js\lightbox.min.map" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\jsp\config.json" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\jsp\controller.jsp" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\net\config.json" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\net\controller.ashx" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\net\README.md" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\net\Web.config" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\php\config.json" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\jquery-1.10.2.min.map" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\video-js\font\vjs.eot" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\video-js\font\vjs.svg" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\video-js\font\vjs.ttf" />
+    <Content Include="assets\lib\H-ui\lib\ueditor\1.4.3\third-party\video-js\font\vjs.woff" />
+    <Content Include="assets\lib\H-ui\lib\webuploader\0.1.5\images\icons.psd" />
+    <Content Include="assets\lib\H-ui\lib\webuploader\0.1.5\images\progress.psd" />
+    <Content Include="assets\lib\H-ui\lib\webuploader\0.1.5\README.md" />
+    <Content Include="handler\Shutdown.ashx" />
+    <None Include="packages.config" />
+    <Content Include="member\ChangePassword.aspx" />
+    <Content Include="member\MemberCenter.aspx" />
+    <Content Include="member\MyAddress.aspx" />
+    <Content Include="member\MyAddressAdd.aspx" />
+    <Content Include="member\MyAddressEdit.aspx" />
+    <Content Include="member\MyOrder.aspx" />
+    <Content Include="member\MyOrderDetail.aspx" />
+    <Content Include="member\SideBar.ascx" />
+    <Content Include="Order.aspx" />
+    <Content Include="shared\Layout.Master" />
+    <Content Include="shared\AdminLayout.Master" />
+    <Content Include="shared\Link.Master" />
+    <Content Include="shared\Handler1.ashx" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="account\Login.aspx" />
+    <Content Include="account\Register.aspx" />
+    <Content Include="assets\css\style.css" />
+    <Content Include="assets\img\advertise\ad-1.jpg" />
+    <Content Include="assets\img\advertise\ad-2.jpg" />
+    <Content Include="assets\img\advertise\ad-right-1.jpg" />
+    <Content Include="assets\img\advertise\ad-right-2.jpg" />
+    <Content Include="assets\img\advertise\ad-right-3.jpg" />
+    <Content Include="assets\img\advertise\ad-right-4.jpg" />
+    <Content Include="assets\img\advertise\ad-right-5.jpg" />
+    <Content Include="assets\img\advertise\brand-1.jpg" />
+    <Content Include="assets\img\advertise\f1-l-ad.jpg" />
+    <Content Include="assets\img\advertise\f1-r-ad.jpg" />
+    <Content Include="assets\img\advertise\f2-l-ad.jpg" />
+    <Content Include="assets\img\advertise\f2-r-ad.jpg" />
+    <Content Include="assets\img\advertise\f3-l-ad.jpg" />
+    <Content Include="assets\img\advertise\f3-r-ad.jpg" />
+    <Content Include="assets\img\advertise\f4-l-ad.jpg" />
+    <Content Include="assets\img\advertise\f4-r-ad.jpg" />
+    <Content Include="assets\img\advertise\f5-l-ad.jpg" />
+    <Content Include="assets\img\advertise\f5-r-ad.jpg" />
+    <Content Include="assets\img\advertise\floor-1.jpg" />
+    <Content Include="assets\img\advertise\floor-2.jpg" />
+    <Content Include="assets\img\advertise\floor-r-1.jpg" />
+    <Content Include="assets\img\advertise\focus-ban-3.jpg" />
+    <Content Include="assets\img\advertise\focus-ban-5.jpg" />
+    <Content Include="assets\img\advertise\focus-ban-6.jpg" />
+    <Content Include="assets\img\advertise\login-ban.gif" />
+    <Content Include="assets\img\advertise\magnifier.jpg" />
+    <Content Include="assets\img\avatar-bg.png" />
+    <Content Include="assets\img\avatar.png" />
+    <Content Include="assets\img\cart-step.gif" />
+    <Content Include="assets\img\choose.gif" />
+    <Content Include="assets\img\empty-cart.jpg" />
+    <Content Include="assets\img\error.jpg" />
+    <Content Include="assets\img\grey.png" />
+    <Content Include="assets\img\loading.gif" />
+    <Content Include="assets\img\logo\logo-text.png" />
+    <Content Include="assets\img\logo\logo.png" />
+    <Content Include="assets\img\spinnerArrows.png" />
+    <Content Include="assets\img\style-icon-all.png" />
+    <Content Include="assets\img\unionpay.gif" />
+    <Content Include="assets\img\verification-sep.gif" />
+    <Content Include="assets\img\y_zfb.gif" />
+    <Content Include="assets\js\pager.js" />
+    <Content Include="assets\lib\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="assets\lib\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="assets\lib\bootstrap\css\bootstrap.css" />
+    <Content Include="assets\lib\bootstrap\css\bootstrap.min.css" />
+    <Content Include="assets\lib\bootstrap\js\bootstrap.js" />
+    <Content Include="assets\lib\bootstrap\js\bootstrap.min.js" />
+    <Content Include="assets\lib\ckeditor\adapters\jquery.js" />
+    <Content Include="assets\lib\ckeditor\build-config.js" />
+    <Content Include="assets\lib\ckeditor\ckeditor.js" />
+    <Content Include="assets\lib\ckeditor\config.js" />
+    <Content Include="assets\lib\ckeditor\contents.css" />
+    <Content Include="assets\lib\ckeditor\lang\af.js" />
+    <Content Include="assets\lib\ckeditor\lang\ar.js" />
+    <Content Include="assets\lib\ckeditor\lang\bg.js" />
+    <Content Include="assets\lib\ckeditor\lang\bn.js" />
+    <Content Include="assets\lib\ckeditor\lang\bs.js" />
+    <Content Include="assets\lib\ckeditor\lang\ca.js" />
+    <Content Include="assets\lib\ckeditor\lang\cs.js" />
+    <Content Include="assets\lib\ckeditor\lang\cy.js" />
+    <Content Include="assets\lib\ckeditor\lang\da.js" />
+    <Content Include="assets\lib\ckeditor\lang\de.js" />
+    <Content Include="assets\lib\ckeditor\lang\el.js" />
+    <Content Include="assets\lib\ckeditor\lang\en-au.js" />
+    <Content Include="assets\lib\ckeditor\lang\en-ca.js" />
+    <Content Include="assets\lib\ckeditor\lang\en-gb.js" />
+    <Content Include="assets\lib\ckeditor\lang\en.js" />
+    <Content Include="assets\lib\ckeditor\lang\eo.js" />
+    <Content Include="assets\lib\ckeditor\lang\es.js" />
+    <Content Include="assets\lib\ckeditor\lang\et.js" />
+    <Content Include="assets\lib\ckeditor\lang\eu.js" />
+    <Content Include="assets\lib\ckeditor\lang\fa.js" />
+    <Content Include="assets\lib\ckeditor\lang\fi.js" />
+    <Content Include="assets\lib\ckeditor\lang\fo.js" />
+    <Content Include="assets\lib\ckeditor\lang\fr-ca.js" />
+    <Content Include="assets\lib\ckeditor\lang\fr.js" />
+    <Content Include="assets\lib\ckeditor\lang\gl.js" />
+    <Content Include="assets\lib\ckeditor\lang\gu.js" />
+    <Content Include="assets\lib\ckeditor\lang\he.js" />
+    <Content Include="assets\lib\ckeditor\lang\hi.js" />
+    <Content Include="assets\lib\ckeditor\lang\hr.js" />
+    <Content Include="assets\lib\ckeditor\lang\hu.js" />
+    <Content Include="assets\lib\ckeditor\lang\id.js" />
+    <Content Include="assets\lib\ckeditor\lang\is.js" />
+    <Content Include="assets\lib\ckeditor\lang\it.js" />
+    <Content Include="assets\lib\ckeditor\lang\ja.js" />
+    <Content Include="assets\lib\ckeditor\lang\ka.js" />
+    <Content Include="assets\lib\ckeditor\lang\km.js" />
+    <Content Include="assets\lib\ckeditor\lang\ko.js" />
+    <Content Include="assets\lib\ckeditor\lang\ku.js" />
+    <Content Include="assets\lib\ckeditor\lang\lt.js" />
+    <Content Include="assets\lib\ckeditor\lang\lv.js" />
+    <Content Include="assets\lib\ckeditor\lang\mk.js" />
+    <Content Include="assets\lib\ckeditor\lang\mn.js" />
+    <Content Include="assets\lib\ckeditor\lang\ms.js" />
+    <Content Include="assets\lib\ckeditor\lang\nb.js" />
+    <Content Include="assets\lib\ckeditor\lang\nl.js" />
+    <Content Include="assets\lib\ckeditor\lang\no.js" />
+    <Content Include="assets\lib\ckeditor\lang\pl.js" />
+    <Content Include="assets\lib\ckeditor\lang\pt-br.js" />
+    <Content Include="assets\lib\ckeditor\lang\pt.js" />
+    <Content Include="assets\lib\ckeditor\lang\ro.js" />
+    <Content Include="assets\lib\ckeditor\lang\ru.js" />
+    <Content Include="assets\lib\ckeditor\lang\si.js" />
+    <Content Include="assets\lib\ckeditor\lang\sk.js" />
+    <Content Include="assets\lib\ckeditor\lang\sl.js" />
+    <Content Include="assets\lib\ckeditor\lang\sq.js" />
+    <Content Include="assets\lib\ckeditor\lang\sr-latn.js" />
+    <Content Include="assets\lib\ckeditor\lang\sr.js" />
+    <Content Include="assets\lib\ckeditor\lang\sv.js" />
+    <Content Include="assets\lib\ckeditor\lang\th.js" />
+    <Content Include="assets\lib\ckeditor\lang\tr.js" />
+    <Content Include="assets\lib\ckeditor\lang\tt.js" />
+    <Content Include="assets\lib\ckeditor\lang\ug.js" />
+    <Content Include="assets\lib\ckeditor\lang\uk.js" />
+    <Content Include="assets\lib\ckeditor\lang\vi.js" />
+    <Content Include="assets\lib\ckeditor\lang\zh-cn.js" />
+    <Content Include="assets\lib\ckeditor\lang\zh.js" />
+    <Content Include="assets\lib\ckeditor\plugins\a11yhelp\dialogs\a11yhelp.js" />
+    <Content Include="assets\lib\ckeditor\plugins\a11yhelp\dialogs\lang\ar.js" />
+    <Content Include="assets\lib\ckeditor\plugins\a11yhelp\dialogs\lang\bg.js" />
+    <Content Include="assets\lib\ckeditor\plugins\a11yhelp\dialogs\lang\ca.js" />
+    <Content Include="assets\lib\ckeditor\plugins\a11yhelp\dialogs\lang\cs.js" />
+    <Content Include="assets\lib\ckeditor\plugins\a11yhelp\dialogs\lang\cy.js" />
+    <Content Include="assets\lib\ckeditor\plugins\a11yhelp\dialogs\lang\da.js" />
+    <Content Include="assets\lib\ckeditor\plugins\a11yhelp\dialogs\lang\de.js" />
+    <Content Include="assets\lib\ckeditor\plugins\a11yhelp\dialogs\lang\el.js" />
+    <Content Include="assets\lib\ckeditor\plugins\a11yhelp\dialogs\lang\en-gb.js" />
+    <Content Include="assets\lib\ckeditor\plugins\a11yhelp\dialogs\lang\en.js" />
+    <Content Include="assets\lib\ckeditor\plugins\a11yhelp\dialogs\lang\eo.js" />
+    <Content Include="assets\lib\ckeditor\plugins\a11yhelp\dialogs\lang\es.js" />
+    <Content Include="assets\lib\ckeditor\plugins\a11yhelp\dialogs\lang\et.js" />
+    <Content Include="assets\lib\ckeditor\plugins\a11yhelp\dialogs\lang\fa.js" />
+    <Content Include="assets\lib\ckeditor\plugins\a11yhelp\dialogs\lang\fi.js" />
+    <Content Include="assets\lib\ckeditor\plugins\a11yhelp\dialogs\lang\fr-ca.js" />
+    <Content Include="assets\lib\ckeditor\plugins\a11yhelp\dialogs\lang\fr.js" />
+    <Content Include="assets\lib\ckeditor\plugins\a11yhelp\dialogs\lang\gl.js" />
+    <Content Include="assets\lib\ckeditor\plugins\a11yhelp\dialogs\lang\gu.js" />
+    <Content Include="assets\lib\ckeditor\plugins\a11yhelp\dialogs\lang\he.js" />
+    <Content Include="assets\lib\ckeditor\plugins\a11yhelp\dialogs\lang\hi.js" />
+    <Content Include="assets\lib\ckeditor\plugins\a11yhelp\dialogs\lang\hr.js" />
+    <Content Include="assets\lib\ckeditor\plugins\a11yhelp\dialogs\lang\hu.js" />
+    <Content Include="assets\lib\ckeditor\plugins\a11yhelp\dialogs\lang\id.js" />
+    <Content Include="assets\lib\ckeditor\plugins\a11yhelp\dialogs\lang\it.js" />
+    <Content Include="assets\lib\ckeditor\plugins\a11yhelp\dialogs\lang\ja.js" />
+    <Content Include="assets\lib\ckeditor\plugins\a11yhelp\dialogs\lang\km.js" />
+    <Content Include="assets\lib\ckeditor\plugins\a11yhelp\dialogs\lang\ko.js" />
+    <Content Include="assets\lib\ckeditor\plugins\a11yhelp\dialogs\lang\ku.js" />
+    <Content Include="assets\lib\ckeditor\plugins\a11yhelp\dialogs\lang\lt.js" />
+    <Content Include="assets\lib\ckeditor\plugins\a11yhelp\dialogs\lang\lv.js" />
+    <Content Include="assets\lib\ckeditor\plugins\a11yhelp\dialogs\lang\mk.js" />
+    <Content Include="assets\lib\ckeditor\plugins\a11yhelp\dialogs\lang\mn.js" />
+    <Content Include="assets\lib\ckeditor\plugins\a11yhelp\dialogs\lang\nb.js" />
+    <Content Include="assets\lib\ckeditor\plugins\a11yhelp\dialogs\lang\nl.js" />
+    <Content Include="assets\lib\ckeditor\plugins\a11yhelp\dialogs\lang\no.js" />
+    <Content Include="assets\lib\ckeditor\plugins\a11yhelp\dialogs\lang\pl.js" />
+    <Content Include="assets\lib\ckeditor\plugins\a11yhelp\dialogs\lang\pt-br.js" />
+    <Content Include="assets\lib\ckeditor\plugins\a11yhelp\dialogs\lang\pt.js" />
+    <Content Include="assets\lib\ckeditor\plugins\a11yhelp\dialogs\lang\ro.js" />
+    <Content Include="assets\lib\ckeditor\plugins\a11yhelp\dialogs\lang\ru.js" />
+    <Content Include="assets\lib\ckeditor\plugins\a11yhelp\dialogs\lang\si.js" />
+    <Content Include="assets\lib\ckeditor\plugins\a11yhelp\dialogs\lang\sk.js" />
+    <Content Include="assets\lib\ckeditor\plugins\a11yhelp\dialogs\lang\sl.js" />
+    <Content Include="assets\lib\ckeditor\plugins\a11yhelp\dialogs\lang\sq.js" />
+    <Content Include="assets\lib\ckeditor\plugins\a11yhelp\dialogs\lang\sr-latn.js" />
+    <Content Include="assets\lib\ckeditor\plugins\a11yhelp\dialogs\lang\sr.js" />
+    <Content Include="assets\lib\ckeditor\plugins\a11yhelp\dialogs\lang\sv.js" />
+    <Content Include="assets\lib\ckeditor\plugins\a11yhelp\dialogs\lang\th.js" />
+    <Content Include="assets\lib\ckeditor\plugins\a11yhelp\dialogs\lang\tr.js" />
+    <Content Include="assets\lib\ckeditor\plugins\a11yhelp\dialogs\lang\tt.js" />
+    <Content Include="assets\lib\ckeditor\plugins\a11yhelp\dialogs\lang\ug.js" />
+    <Content Include="assets\lib\ckeditor\plugins\a11yhelp\dialogs\lang\uk.js" />
+    <Content Include="assets\lib\ckeditor\plugins\a11yhelp\dialogs\lang\vi.js" />
+    <Content Include="assets\lib\ckeditor\plugins\a11yhelp\dialogs\lang\zh-cn.js" />
+    <Content Include="assets\lib\ckeditor\plugins\a11yhelp\dialogs\lang\zh.js" />
+    <Content Include="assets\lib\ckeditor\plugins\a11yhelp\dialogs\lang\_translationstatus.txt" />
+    <Content Include="assets\lib\ckeditor\plugins\about\dialogs\about.js" />
+    <Content Include="assets\lib\ckeditor\plugins\about\dialogs\hidpi\logo_ckeditor.png" />
+    <Content Include="assets\lib\ckeditor\plugins\about\dialogs\logo_ckeditor.png" />
+    <Content Include="assets\lib\ckeditor\plugins\bbcode\dev\bbcode.html" />
+    <Content Include="assets\lib\ckeditor\plugins\bbcode\plugin.js" />
+    <Content Include="assets\lib\ckeditor\plugins\bbcode\samples\bbcode.html" />
+    <Content Include="assets\lib\ckeditor\plugins\clipboard\dialogs\paste.js" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\dialogs\codesnippet.js" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\icons\codesnippet.png" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\icons\hidpi\codesnippet.png" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lang\bg.js" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lang\ca.js" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lang\cs.js" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lang\da.js" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lang\de.js" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lang\el.js" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lang\en-gb.js" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lang\en.js" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lang\eo.js" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lang\es.js" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lang\et.js" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lang\fa.js" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lang\fi.js" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lang\fr-ca.js" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lang\fr.js" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lang\hr.js" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lang\hu.js" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lang\it.js" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lang\ja.js" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lang\km.js" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lang\ku.js" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lang\lt.js" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lang\lv.js" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lang\nb.js" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lang\nl.js" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lang\no.js" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lang\pl.js" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lang\pt-br.js" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lang\pt.js" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lang\ro.js" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lang\ru.js" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lang\sk.js" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lang\sl.js" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lang\sq.js" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lang\sv.js" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lang\th.js" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lang\tt.js" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lang\ug.js" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lang\uk.js" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lang\vi.js" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lang\zh-cn.js" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lib\highlight\highlight.pack.js" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lib\highlight\styles\arta.css" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lib\highlight\styles\ascetic.css" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lib\highlight\styles\atelier-dune.dark.css" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lib\highlight\styles\atelier-dune.light.css" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lib\highlight\styles\atelier-forest.dark.css" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lib\highlight\styles\atelier-forest.light.css" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lib\highlight\styles\atelier-heath.dark.css" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lib\highlight\styles\atelier-heath.light.css" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lib\highlight\styles\atelier-lakeside.dark.css" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lib\highlight\styles\atelier-lakeside.light.css" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lib\highlight\styles\atelier-seaside.dark.css" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lib\highlight\styles\atelier-seaside.light.css" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lib\highlight\styles\brown_paper.css" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lib\highlight\styles\brown_papersq.png" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lib\highlight\styles\dark.css" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lib\highlight\styles\default.css" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lib\highlight\styles\docco.css" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lib\highlight\styles\far.css" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lib\highlight\styles\foundation.css" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lib\highlight\styles\github.css" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lib\highlight\styles\googlecode.css" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lib\highlight\styles\idea.css" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lib\highlight\styles\ir_black.css" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lib\highlight\styles\magula.css" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lib\highlight\styles\mono-blue.css" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lib\highlight\styles\monokai.css" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lib\highlight\styles\monokai_sublime.css" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lib\highlight\styles\obsidian.css" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lib\highlight\styles\paraiso.dark.css" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lib\highlight\styles\paraiso.light.css" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lib\highlight\styles\pojoaque.css" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lib\highlight\styles\pojoaque.jpg" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lib\highlight\styles\railscasts.css" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lib\highlight\styles\rainbow.css" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lib\highlight\styles\school_book.css" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lib\highlight\styles\school_book.png" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lib\highlight\styles\solarized_dark.css" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lib\highlight\styles\solarized_light.css" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lib\highlight\styles\sunburst.css" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lib\highlight\styles\tomorrow-night-blue.css" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lib\highlight\styles\tomorrow-night-bright.css" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lib\highlight\styles\tomorrow-night-eighties.css" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lib\highlight\styles\tomorrow-night.css" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lib\highlight\styles\tomorrow.css" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lib\highlight\styles\vs.css" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lib\highlight\styles\xcode.css" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\lib\highlight\styles\zenburn.css" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\plugin.js" />
+    <Content Include="assets\lib\ckeditor\plugins\codesnippet\samples\codesnippet.html" />
+    <Content Include="assets\lib\ckeditor\plugins\colordialog\dialogs\colordialog.js" />
+    <Content Include="assets\lib\ckeditor\plugins\dialog\dialogDefinition.js" />
+    <Content Include="assets\lib\ckeditor\plugins\div\dialogs\div.js" />
+    <Content Include="assets\lib\ckeditor\plugins\filebrowser\plugin.js" />
+    <Content Include="assets\lib\ckeditor\plugins\find\dialogs\find.js" />
+    <Content Include="assets\lib\ckeditor\plugins\flash\dialogs\flash.js" />
+    <Content Include="assets\lib\ckeditor\plugins\flash\images\placeholder.png" />
+    <Content Include="assets\lib\ckeditor\plugins\forms\dialogs\button.js" />
+    <Content Include="assets\lib\ckeditor\plugins\forms\dialogs\checkbox.js" />
+    <Content Include="assets\lib\ckeditor\plugins\forms\dialogs\form.js" />
+    <Content Include="assets\lib\ckeditor\plugins\forms\dialogs\hiddenfield.js" />
+    <Content Include="assets\lib\ckeditor\plugins\forms\dialogs\radio.js" />
+    <Content Include="assets\lib\ckeditor\plugins\forms\dialogs\select.js" />
+    <Content Include="assets\lib\ckeditor\plugins\forms\dialogs\textarea.js" />
+    <Content Include="assets\lib\ckeditor\plugins\forms\dialogs\textfield.js" />
+    <Content Include="assets\lib\ckeditor\plugins\forms\images\hiddenfield.gif" />
+    <Content Include="assets\lib\ckeditor\plugins\icons.png" />
+    <Content Include="assets\lib\ckeditor\plugins\icons_hidpi.png" />
+    <Content Include="assets\lib\ckeditor\plugins\iframe\dialogs\iframe.js" />
+    <Content Include="assets\lib\ckeditor\plugins\iframe\images\placeholder.png" />
+    <Content Include="assets\lib\ckeditor\plugins\imagepaste\docs\install.html" />
+    <Content Include="assets\lib\ckeditor\plugins\imagepaste\docs\styles.css" />
+    <Content Include="assets\lib\ckeditor\plugins\imagepaste\plugin.js" />
+    <Content Include="assets\lib\ckeditor\plugins\image\dialogs\image.js" />
+    <Content Include="assets\lib\ckeditor\plugins\image\images\noimage.png" />
+    <Content Include="assets\lib\ckeditor\plugins\lineutils\dev\dnd.html" />
+    <Content Include="assets\lib\ckeditor\plugins\lineutils\dev\magicfinger.html" />
+    <Content Include="assets\lib\ckeditor\plugins\lineutils\plugin.js" />
+    <Content Include="assets\lib\ckeditor\plugins\link\dialogs\anchor.js" />
+    <Content Include="assets\lib\ckeditor\plugins\link\dialogs\link.js" />
+    <Content Include="assets\lib\ckeditor\plugins\link\images\anchor.png" />
+    <Content Include="assets\lib\ckeditor\plugins\link\images\hidpi\anchor.png" />
+    <Content Include="assets\lib\ckeditor\plugins\liststyle\dialogs\liststyle.js" />
+    <Content Include="assets\lib\ckeditor\plugins\magicline\images\hidpi\icon.png" />
+    <Content Include="assets\lib\ckeditor\plugins\magicline\images\icon.png" />
+    <Content Include="assets\lib\ckeditor\plugins\pagebreak\images\pagebreak.gif" />
+    <Content Include="assets\lib\ckeditor\plugins\pastefromword\filter\default.js" />
+    <Content Include="assets\lib\ckeditor\plugins\pbckcode\dialogs\pbckcode.js" />
+    <Content Include="assets\lib\ckeditor\plugins\pbckcode\dialogs\PBSyntaxHighlighter.js" />
+    <Content Include="assets\lib\ckeditor\plugins\pbckcode\dialogs\style.css" />
+    <Content Include="assets\lib\ckeditor\plugins\pbckcode\icons\pbckcode.png" />
+    <Content Include="assets\lib\ckeditor\plugins\pbckcode\lang\en.js" />
+    <Content Include="assets\lib\ckeditor\plugins\pbckcode\lang\fr.js" />
+    <Content Include="assets\lib\ckeditor\plugins\pbckcode\plugin.js" />
+    <Content Include="assets\lib\ckeditor\plugins\preview\preview.html" />
+    <Content Include="assets\lib\ckeditor\plugins\scayt\dialogs\options.js" />
+    <Content Include="assets\lib\ckeditor\plugins\scayt\dialogs\toolbar.css" />
+    <Content Include="assets\lib\ckeditor\plugins\showblocks\images\block_address.png" />
+    <Content Include="assets\lib\ckeditor\plugins\showblocks\images\block_blockquote.png" />
+    <Content Include="assets\lib\ckeditor\plugins\showblocks\images\block_div.png" />
+    <Content Include="assets\lib\ckeditor\plugins\showblocks\images\block_h1.png" />
+    <Content Include="assets\lib\ckeditor\plugins\showblocks\images\block_h2.png" />
+    <Content Include="assets\lib\ckeditor\plugins\showblocks\images\block_h3.png" />
+    <Content Include="assets\lib\ckeditor\plugins\showblocks\images\block_h4.png" />
+    <Content Include="assets\lib\ckeditor\plugins\showblocks\images\block_h5.png" />
+    <Content Include="assets\lib\ckeditor\plugins\showblocks\images\block_h6.png" />
+    <Content Include="assets\lib\ckeditor\plugins\showblocks\images\block_p.png" />
+    <Content Include="assets\lib\ckeditor\plugins\showblocks\images\block_pre.png" />
+    <Content Include="assets\lib\ckeditor\plugins\smiley\dialogs\smiley.js" />
+    <Content Include="assets\lib\ckeditor\plugins\smiley\images\angel_smile.gif" />
+    <Content Include="assets\lib\ckeditor\plugins\smiley\images\angel_smile.png" />
+    <Content Include="assets\lib\ckeditor\plugins\smiley\images\angry_smile.gif" />
+    <Content Include="assets\lib\ckeditor\plugins\smiley\images\angry_smile.png" />
+    <Content Include="assets\lib\ckeditor\plugins\smiley\images\broken_heart.gif" />
+    <Content Include="assets\lib\ckeditor\plugins\smiley\images\broken_heart.png" />
+    <Content Include="assets\lib\ckeditor\plugins\smiley\images\confused_smile.gif" />
+    <Content Include="assets\lib\ckeditor\plugins\smiley\images\confused_smile.png" />
+    <Content Include="assets\lib\ckeditor\plugins\smiley\images\cry_smile.gif" />
+    <Content Include="assets\lib\ckeditor\plugins\smiley\images\cry_smile.png" />
+    <Content Include="assets\lib\ckeditor\plugins\smiley\images\devil_smile.gif" />
+    <Content Include="assets\lib\ckeditor\plugins\smiley\images\devil_smile.png" />
+    <Content Include="assets\lib\ckeditor\plugins\smiley\images\embaressed_smile.gif" />
+    <Content Include="assets\lib\ckeditor\plugins\smiley\images\embarrassed_smile.gif" />
+    <Content Include="assets\lib\ckeditor\plugins\smiley\images\embarrassed_smile.png" />
+    <Content Include="assets\lib\ckeditor\plugins\smiley\images\envelope.gif" />
+    <Content Include="assets\lib\ckeditor\plugins\smiley\images\envelope.png" />
+    <Content Include="assets\lib\ckeditor\plugins\smiley\images\heart.gif" />
+    <Content Include="assets\lib\ckeditor\plugins\smiley\images\heart.png" />
+    <Content Include="assets\lib\ckeditor\plugins\smiley\images\kiss.gif" />
+    <Content Include="assets\lib\ckeditor\plugins\smiley\images\kiss.png" />
+    <Content Include="assets\lib\ckeditor\plugins\smiley\images\lightbulb.gif" />
+    <Content Include="assets\lib\ckeditor\plugins\smiley\images\lightbulb.png" />
+    <Content Include="assets\lib\ckeditor\plugins\smiley\images\omg_smile.gif" />
+    <Content Include="assets\lib\ckeditor\plugins\smiley\images\omg_smile.png" />
+    <Content Include="assets\lib\ckeditor\plugins\smiley\images\regular_smile.gif" />
+    <Content Include="assets\lib\ckeditor\plugins\smiley\images\regular_smile.png" />
+    <Content Include="assets\lib\ckeditor\plugins\smiley\images\sad_smile.gif" />
+    <Content Include="assets\lib\ckeditor\plugins\smiley\images\sad_smile.png" />
+    <Content Include="assets\lib\ckeditor\plugins\smiley\images\shades_smile.gif" />
+    <Content Include="assets\lib\ckeditor\plugins\smiley\images\shades_smile.png" />
+    <Content Include="assets\lib\ckeditor\plugins\smiley\images\teeth_smile.gif" />
+    <Content Include="assets\lib\ckeditor\plugins\smiley\images\teeth_smile.png" />
+    <Content Include="assets\lib\ckeditor\plugins\smiley\images\thumbs_down.gif" />
+    <Content Include="assets\lib\ckeditor\plugins\smiley\images\thumbs_down.png" />
+    <Content Include="assets\lib\ckeditor\plugins\smiley\images\thumbs_up.gif" />
+    <Content Include="assets\lib\ckeditor\plugins\smiley\images\thumbs_up.png" />
+    <Content Include="assets\lib\ckeditor\plugins\smiley\images\tongue_smile.gif" />
+    <Content Include="assets\lib\ckeditor\plugins\smiley\images\tongue_smile.png" />
+    <Content Include="assets\lib\ckeditor\plugins\smiley\images\tounge_smile.gif" />
+    <Content Include="assets\lib\ckeditor\plugins\smiley\images\whatchutalkingabout_smile.gif" />
+    <Content Include="assets\lib\ckeditor\plugins\smiley\images\whatchutalkingabout_smile.png" />
+    <Content Include="assets\lib\ckeditor\plugins\smiley\images\wink_smile.gif" />
+    <Content Include="assets\lib\ckeditor\plugins\smiley\images\wink_smile.png" />
+    <Content Include="assets\lib\ckeditor\plugins\specialchar\dialogs\lang\ar.js" />
+    <Content Include="assets\lib\ckeditor\plugins\specialchar\dialogs\lang\bg.js" />
+    <Content Include="assets\lib\ckeditor\plugins\specialchar\dialogs\lang\ca.js" />
+    <Content Include="assets\lib\ckeditor\plugins\specialchar\dialogs\lang\cs.js" />
+    <Content Include="assets\lib\ckeditor\plugins\specialchar\dialogs\lang\cy.js" />
+    <Content Include="assets\lib\ckeditor\plugins\specialchar\dialogs\lang\de.js" />
+    <Content Include="assets\lib\ckeditor\plugins\specialchar\dialogs\lang\el.js" />
+    <Content Include="assets\lib\ckeditor\plugins\specialchar\dialogs\lang\en-gb.js" />
+    <Content Include="assets\lib\ckeditor\plugins\specialchar\dialogs\lang\en.js" />
+    <Content Include="assets\lib\ckeditor\plugins\specialchar\dialogs\lang\eo.js" />
+    <Content Include="assets\lib\ckeditor\plugins\specialchar\dialogs\lang\es.js" />
+    <Content Include="assets\lib\ckeditor\plugins\specialchar\dialogs\lang\et.js" />
+    <Content Include="assets\lib\ckeditor\plugins\specialchar\dialogs\lang\fa.js" />
+    <Content Include="assets\lib\ckeditor\plugins\specialchar\dialogs\lang\fi.js" />
+    <Content Include="assets\lib\ckeditor\plugins\specialchar\dialogs\lang\fr-ca.js" />
+    <Content Include="assets\lib\ckeditor\plugins\specialchar\dialogs\lang\fr.js" />
+    <Content Include="assets\lib\ckeditor\plugins\specialchar\dialogs\lang\gl.js" />
+    <Content Include="assets\lib\ckeditor\plugins\specialchar\dialogs\lang\he.js" />
+    <Content Include="assets\lib\ckeditor\plugins\specialchar\dialogs\lang\hr.js" />
+    <Content Include="assets\lib\ckeditor\plugins\specialchar\dialogs\lang\hu.js" />
+    <Content Include="assets\lib\ckeditor\plugins\specialchar\dialogs\lang\id.js" />
+    <Content Include="assets\lib\ckeditor\plugins\specialchar\dialogs\lang\it.js" />
+    <Content Include="assets\lib\ckeditor\plugins\specialchar\dialogs\lang\ja.js" />
+    <Content Include="assets\lib\ckeditor\plugins\specialchar\dialogs\lang\km.js" />
+    <Content Include="assets\lib\ckeditor\plugins\specialchar\dialogs\lang\ku.js" />
+    <Content Include="assets\lib\ckeditor\plugins\specialchar\dialogs\lang\lv.js" />
+    <Content Include="assets\lib\ckeditor\plugins\specialchar\dialogs\lang\nb.js" />
+    <Content Include="assets\lib\ckeditor\plugins\specialchar\dialogs\lang\nl.js" />
+    <Content Include="assets\lib\ckeditor\plugins\specialchar\dialogs\lang\no.js" />
+    <Content Include="assets\lib\ckeditor\plugins\specialchar\dialogs\lang\pl.js" />
+    <Content Include="assets\lib\ckeditor\plugins\specialchar\dialogs\lang\pt-br.js" />
+    <Content Include="assets\lib\ckeditor\plugins\specialchar\dialogs\lang\pt.js" />
+    <Content Include="assets\lib\ckeditor\plugins\specialchar\dialogs\lang\ru.js" />
+    <Content Include="assets\lib\ckeditor\plugins\specialchar\dialogs\lang\si.js" />
+    <Content Include="assets\lib\ckeditor\plugins\specialchar\dialogs\lang\sk.js" />
+    <Content Include="assets\lib\ckeditor\plugins\specialchar\dialogs\lang\sl.js" />
+    <Content Include="assets\lib\ckeditor\plugins\specialchar\dialogs\lang\sq.js" />
+    <Content Include="assets\lib\ckeditor\plugins\specialchar\dialogs\lang\sv.js" />
+    <Content Include="assets\lib\ckeditor\plugins\specialchar\dialogs\lang\th.js" />
+    <Content Include="assets\lib\ckeditor\plugins\specialchar\dialogs\lang\tr.js" />
+    <Content Include="assets\lib\ckeditor\plugins\specialchar\dialogs\lang\tt.js" />
+    <Content Include="assets\lib\ckeditor\plugins\specialchar\dialogs\lang\ug.js" />
+    <Content Include="assets\lib\ckeditor\plugins\specialchar\dialogs\lang\uk.js" />
+    <Content Include="assets\lib\ckeditor\plugins\specialchar\dialogs\lang\vi.js" />
+    <Content Include="assets\lib\ckeditor\plugins\specialchar\dialogs\lang\zh-cn.js" />
+    <Content Include="assets\lib\ckeditor\plugins\specialchar\dialogs\lang\zh.js" />
+    <Content Include="assets\lib\ckeditor\plugins\specialchar\dialogs\lang\_translationstatus.txt" />
+    <Content Include="assets\lib\ckeditor\plugins\specialchar\dialogs\specialchar.js" />
+    <Content Include="assets\lib\ckeditor\plugins\tabletools\dialogs\tableCell.js" />
+    <Content Include="assets\lib\ckeditor\plugins\table\dialogs\table.js" />
+    <Content Include="assets\lib\ckeditor\plugins\templates\dialogs\templates.css" />
+    <Content Include="assets\lib\ckeditor\plugins\templates\dialogs\templates.js" />
+    <Content Include="assets\lib\ckeditor\plugins\templates\templates\default.js" />
+    <Content Include="assets\lib\ckeditor\plugins\templates\templates\images\template1.gif" />
+    <Content Include="assets\lib\ckeditor\plugins\templates\templates\images\template2.gif" />
+    <Content Include="assets\lib\ckeditor\plugins\templates\templates\images\template3.gif" />
+    <Content Include="assets\lib\ckeditor\plugins\widget\images\handle.png" />
+    <Content Include="assets\lib\ckeditor\plugins\widget\lang\ar.js" />
+    <Content Include="assets\lib\ckeditor\plugins\widget\lang\ca.js" />
+    <Content Include="assets\lib\ckeditor\plugins\widget\lang\cs.js" />
+    <Content Include="assets\lib\ckeditor\plugins\widget\lang\cy.js" />
+    <Content Include="assets\lib\ckeditor\plugins\widget\lang\de.js" />
+    <Content Include="assets\lib\ckeditor\plugins\widget\lang\el.js" />
+    <Content Include="assets\lib\ckeditor\plugins\widget\lang\en-gb.js" />
+    <Content Include="assets\lib\ckeditor\plugins\widget\lang\en.js" />
+    <Content Include="assets\lib\ckeditor\plugins\widget\lang\eo.js" />
+    <Content Include="assets\lib\ckeditor\plugins\widget\lang\es.js" />
+    <Content Include="assets\lib\ckeditor\plugins\widget\lang\fa.js" />
+    <Content Include="assets\lib\ckeditor\plugins\widget\lang\fi.js" />
+    <Content Include="assets\lib\ckeditor\plugins\widget\lang\fr.js" />
+    <Content Include="assets\lib\ckeditor\plugins\widget\lang\gl.js" />
+    <Content Include="assets\lib\ckeditor\plugins\widget\lang\he.js" />
+    <Content Include="assets\lib\ckeditor\plugins\widget\lang\hr.js" />
+    <Content Include="assets\lib\ckeditor\plugins\widget\lang\hu.js" />
+    <Content Include="assets\lib\ckeditor\plugins\widget\lang\it.js" />
+    <Content Include="assets\lib\ckeditor\plugins\widget\lang\ja.js" />
+    <Content Include="assets\lib\ckeditor\plugins\widget\lang\km.js" />
+    <Content Include="assets\lib\ckeditor\plugins\widget\lang\ko.js" />
+    <Content Include="assets\lib\ckeditor\plugins\widget\lang\nb.js" />
+    <Content Include="assets\lib\ckeditor\plugins\widget\lang\nl.js" />
+    <Content Include="assets\lib\ckeditor\plugins\widget\lang\no.js" />
+    <Content Include="assets\lib\ckeditor\plugins\widget\lang\pl.js" />
+    <Content Include="assets\lib\ckeditor\plugins\widget\lang\pt-br.js" />
+    <Content Include="assets\lib\ckeditor\plugins\widget\lang\pt.js" />
+    <Content Include="assets\lib\ckeditor\plugins\widget\lang\ru.js" />
+    <Content Include="assets\lib\ckeditor\plugins\widget\lang\sl.js" />
+    <Content Include="assets\lib\ckeditor\plugins\widget\lang\sv.js" />
+    <Content Include="assets\lib\ckeditor\plugins\widget\lang\tt.js" />
+    <Content Include="assets\lib\ckeditor\plugins\widget\lang\uk.js" />
+    <Content Include="assets\lib\ckeditor\plugins\widget\lang\vi.js" />
+    <Content Include="assets\lib\ckeditor\plugins\widget\lang\zh-cn.js" />
+    <Content Include="assets\lib\ckeditor\plugins\widget\lang\zh.js" />
+    <Content Include="assets\lib\ckeditor\plugins\widget\plugin.js" />
+    <Content Include="assets\lib\ckeditor\plugins\wsc\dialogs\ciframe.html" />
+    <Content Include="assets\lib\ckeditor\plugins\wsc\dialogs\tmpFrameset.html" />
+    <Content Include="assets\lib\ckeditor\plugins\wsc\dialogs\wsc.css" />
+    <Content Include="assets\lib\ckeditor\plugins\wsc\dialogs\wsc.js" />
+    <Content Include="assets\lib\ckeditor\plugins\wsc\dialogs\wsc_ie.js" />
+    <Content Include="assets\lib\ckeditor\samples\ajax.html" />
+    <Content Include="assets\lib\ckeditor\samples\api.html" />
+    <Content Include="assets\lib\ckeditor\samples\appendto.html" />
+    <Content Include="assets\lib\ckeditor\samples\assets\inlineall\logo.png" />
+    <Content Include="assets\lib\ckeditor\samples\assets\outputxhtml\outputxhtml.css" />
+    <Content Include="assets\lib\ckeditor\samples\assets\posteddata.php" />
+    <Content Include="assets\lib\ckeditor\samples\assets\sample.jpg" />
+    <Content Include="assets\lib\ckeditor\samples\assets\uilanguages\languages.js" />
+    <Content Include="assets\lib\ckeditor\samples\datafiltering.html" />
+    <Content Include="assets\lib\ckeditor\samples\divreplace.html" />
+    <Content Include="assets\lib\ckeditor\samples\index.html" />
+    <Content Include="assets\lib\ckeditor\samples\inlineall.html" />
+    <Content Include="assets\lib\ckeditor\samples\inlinebycode.html" />
+    <Content Include="assets\lib\ckeditor\samples\inlinetextarea.html" />
+    <Content Include="assets\lib\ckeditor\samples\jquery.html" />
+    <Content Include="assets\lib\ckeditor\samples\plugins\dialog\assets\my_dialog.js" />
+    <Content Include="assets\lib\ckeditor\samples\plugins\dialog\dialog.html" />
+    <Content Include="assets\lib\ckeditor\samples\plugins\enterkey\enterkey.html" />
+    <Content Include="assets\lib\ckeditor\samples\plugins\htmlwriter\assets\outputforflash\outputforflash.swf" />
+    <Content Include="assets\lib\ckeditor\samples\plugins\htmlwriter\assets\outputforflash\swfobject.js" />
+    <Content Include="assets\lib\ckeditor\samples\plugins\htmlwriter\outputforflash.html" />
+    <Content Include="assets\lib\ckeditor\samples\plugins\htmlwriter\outputhtml.html" />
+    <Content Include="assets\lib\ckeditor\samples\plugins\magicline\magicline.html" />
+    <Content Include="assets\lib\ckeditor\samples\plugins\toolbar\toolbar.html" />
+    <Content Include="assets\lib\ckeditor\samples\plugins\wysiwygarea\fullpage.html" />
+    <Content Include="assets\lib\ckeditor\samples\readonly.html" />
+    <Content Include="assets\lib\ckeditor\samples\replacebyclass.html" />
+    <Content Include="assets\lib\ckeditor\samples\replacebycode.html" />
+    <Content Include="assets\lib\ckeditor\samples\sample.css" />
+    <Content Include="assets\lib\ckeditor\samples\sample.js" />
+    <Content Include="assets\lib\ckeditor\samples\sample_posteddata.php" />
+    <Content Include="assets\lib\ckeditor\samples\tabindex.html" />
+    <Content Include="assets\lib\ckeditor\samples\uicolor.html" />
+    <Content Include="assets\lib\ckeditor\samples\uilanguages.html" />
+    <Content Include="assets\lib\ckeditor\samples\xhtmlstyle.html" />
+    <Content Include="assets\lib\ckeditor\skins\atlas\dev\icons16.png" />
+    <Content Include="assets\lib\ckeditor\skins\atlas\dev\icons32.png" />
+    <Content Include="assets\lib\ckeditor\skins\atlas\dialog.css" />
+    <Content Include="assets\lib\ckeditor\skins\atlas\dialog_ie.css" />
+    <Content Include="assets\lib\ckeditor\skins\atlas\dialog_ie7.css" />
+    <Content Include="assets\lib\ckeditor\skins\atlas\dialog_ie8.css" />
+    <Content Include="assets\lib\ckeditor\skins\atlas\dialog_iequirks.css" />
+    <Content Include="assets\lib\ckeditor\skins\atlas\dialog_opera.css" />
+    <Content Include="assets\lib\ckeditor\skins\atlas\editor.css" />
+    <Content Include="assets\lib\ckeditor\skins\atlas\editor_ie.css" />
+    <Content Include="assets\lib\ckeditor\skins\atlas\editor_ie7.css" />
+    <Content Include="assets\lib\ckeditor\skins\atlas\editor_ie8.css" />
+    <Content Include="assets\lib\ckeditor\skins\atlas\editor_iequirks.css" />
+    <Content Include="assets\lib\ckeditor\skins\atlas\icons.png" />
+    <Content Include="assets\lib\ckeditor\skins\atlas\icons\icons.png" />
+    <Content Include="assets\lib\ckeditor\skins\atlas\images\arrow.png" />
+    <Content Include="assets\lib\ckeditor\skins\atlas\images\close.png" />
+    <Content Include="assets\lib\ckeditor\skins\atlas\images\hidpi\close.png" />
+    <Content Include="assets\lib\ckeditor\skins\atlas\images\hidpi\lock-open.png" />
+    <Content Include="assets\lib\ckeditor\skins\atlas\images\hidpi\lock.png" />
+    <Content Include="assets\lib\ckeditor\skins\atlas\images\hidpi\refresh.png" />
+    <Content Include="assets\lib\ckeditor\skins\atlas\images\lock-open.png" />
+    <Content Include="assets\lib\ckeditor\skins\atlas\images\lock.png" />
+    <Content Include="assets\lib\ckeditor\skins\atlas\images\refresh.png" />
+    <Content Include="assets\lib\ckeditor\skins\atlas\skin.js" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\.temp\css\dialog.css" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\.temp\css\dialog_ie.css" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\.temp\css\dialog_ie7.css" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\.temp\css\dialog_ie8.css" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\.temp\css\dialog_iequirks.css" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\.temp\css\dialog_opera.css" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\.temp\css\editor.css" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\.temp\css\editor_gecko.css" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\.temp\css\editor_ie.css" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\.temp\css\editor_ie7.css" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\.temp\css\editor_ie8.css" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\.temp\css\editor_iequirks.css" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\dialog.css" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\dialog_ie.css" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\dialog_ie7.css" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\dialog_ie8.css" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\dialog_iequirks.css" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\dialog_opera.css" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\editor.css" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\editor_gecko.css" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\editor_ie.css" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\editor_ie7.css" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\editor_ie8.css" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\editor_iequirks.css" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\icons.png" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\icons_hidpi.png" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\images\arrow.png" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\images\close.png" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\images\hidpi\close.png" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\images\hidpi\lock-open.png" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\images\hidpi\lock.png" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\images\hidpi\refresh.png" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\images\lock-open.png" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\images\lock.png" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\images\refresh.png" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\sample\bootstrapck-sample.html" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\sample\css\bootstrapck-sample.css" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\sample\js\analytics.js" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\sample\js\jquery-1.11.0.min.js" />
+    <Content Include="assets\lib\ckeditor\skins\bootstrap\skin.js" />
+    <Content Include="assets\lib\ckeditor\skins\kama\dialog.css" />
+    <Content Include="assets\lib\ckeditor\skins\kama\dialog_ie.css" />
+    <Content Include="assets\lib\ckeditor\skins\kama\dialog_ie7.css" />
+    <Content Include="assets\lib\ckeditor\skins\kama\dialog_ie8.css" />
+    <Content Include="assets\lib\ckeditor\skins\kama\dialog_iequirks.css" />
+    <Content Include="assets\lib\ckeditor\skins\kama\editor.css" />
+    <Content Include="assets\lib\ckeditor\skins\kama\editor_ie.css" />
+    <Content Include="assets\lib\ckeditor\skins\kama\editor_ie7.css" />
+    <Content Include="assets\lib\ckeditor\skins\kama\editor_ie8.css" />
+    <Content Include="assets\lib\ckeditor\skins\kama\editor_iequirks.css" />
+    <Content Include="assets\lib\ckeditor\skins\kama\icons.png" />
+    <Content Include="assets\lib\ckeditor\skins\kama\icons_hidpi.png" />
+    <Content Include="assets\lib\ckeditor\skins\kama\images\dialog_sides.gif" />
+    <Content Include="assets\lib\ckeditor\skins\kama\images\dialog_sides.png" />
+    <Content Include="assets\lib\ckeditor\skins\kama\images\dialog_sides_rtl.png" />
+    <Content Include="assets\lib\ckeditor\skins\kama\images\mini.gif" />
+    <Content Include="assets\lib\ckeditor\skins\kama\images\sprites.png" />
+    <Content Include="assets\lib\ckeditor\skins\kama\images\sprites_ie6.png" />
+    <Content Include="assets\lib\ckeditor\skins\kama\images\toolbar_start.gif" />
+    <Content Include="assets\lib\ckeditor\skins\kama\skin.js" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\dialog.css" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\dialog_ie.css" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\dialog_ie7.css" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\dialog_ie8.css" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\dialog_iequirks.css" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\dialog_opera.css" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\editor.css" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\editor_gecko.css" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\editor_ie.css" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\editor_ie7.css" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\editor_ie8.css" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\editor_iequirks.css" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\about.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\anchor-rtl.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\anchor.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\bgcolor.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\bidiltr.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\bidirtl.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\blockquote.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\bold.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\bulletedlist-rtl.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\bulletedlist.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\button.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\checkbox.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\copy-rtl.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\copy.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\creatediv.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\cut-rtl.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\cut.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\find-rtl.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\find.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\flash.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\form.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\hiddenfield.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\horizontalrule.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\iframe.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\image.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\imagebutton.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\indent-rtl.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\indent.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\italic.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\justifyblock.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\justifycenter.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\justifyleft.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\justifyright.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\link.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\maximize.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\newpage-rtl.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\newpage.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\numberedlist-rtl.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\numberedlist.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\outdent-rtl.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\outdent.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\pagebreak-rtl.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\pagebreak.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\paste-rtl.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\paste.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\pastefromword-rtl.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\pastefromword.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\pastetext-rtl.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\pastetext.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\preview-rtl.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\preview.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\print.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\radio.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\redo-rtl.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\redo.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\removeformat.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\replace.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\save.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\scayt.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\select-rtl.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\select.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\selectall.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\showblocks-rtl.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\showblocks.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\smiley.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\source-rtl.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\source.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\specialchar.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\spellchecker.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\strike.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\subscript.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\superscript.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\table.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\templates-rtl.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\templates.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\textarea-rtl.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\textarea.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\textcolor.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\textfield-rtl.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\textfield.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\underline.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\undo-rtl.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\undo.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\icons\unlink.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\images\arrow.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\images\close.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\images\hidpi\close.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\images\hidpi\lock-open.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\images\hidpi\lock.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\images\hidpi\refresh.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\images\lock-open.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\images\lock.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\images\refresh.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-blue\skin.js" />
+    <Content Include="assets\lib\ckeditor\skins\moono-color\dialog.css" />
+    <Content Include="assets\lib\ckeditor\skins\moono-color\dialog_ie.css" />
+    <Content Include="assets\lib\ckeditor\skins\moono-color\dialog_ie7.css" />
+    <Content Include="assets\lib\ckeditor\skins\moono-color\dialog_ie8.css" />
+    <Content Include="assets\lib\ckeditor\skins\moono-color\dialog_iequirks.css" />
+    <Content Include="assets\lib\ckeditor\skins\moono-color\dialog_opera.css" />
+    <Content Include="assets\lib\ckeditor\skins\moono-color\editor.css" />
+    <Content Include="assets\lib\ckeditor\skins\moono-color\editor_gecko.css" />
+    <Content Include="assets\lib\ckeditor\skins\moono-color\editor_ie.css" />
+    <Content Include="assets\lib\ckeditor\skins\moono-color\editor_ie7.css" />
+    <Content Include="assets\lib\ckeditor\skins\moono-color\editor_ie8.css" />
+    <Content Include="assets\lib\ckeditor\skins\moono-color\editor_iequirks.css" />
+    <Content Include="assets\lib\ckeditor\skins\moono-color\icons.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-color\icons_hidpi.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-color\images\arrow.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-color\images\close.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-color\images\hidpi\close.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-color\images\hidpi\lock-open.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-color\images\hidpi\lock.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-color\images\hidpi\refresh.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-color\images\lock-open.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-color\images\lock.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-color\images\refresh.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-color\skin.js" />
+    <Content Include="assets\lib\ckeditor\skins\moono-dark\dialog.css" />
+    <Content Include="assets\lib\ckeditor\skins\moono-dark\dialog_ie.css" />
+    <Content Include="assets\lib\ckeditor\skins\moono-dark\dialog_ie7.css" />
+    <Content Include="assets\lib\ckeditor\skins\moono-dark\dialog_ie8.css" />
+    <Content Include="assets\lib\ckeditor\skins\moono-dark\dialog_iequirks.css" />
+    <Content Include="assets\lib\ckeditor\skins\moono-dark\editor.css" />
+    <Content Include="assets\lib\ckeditor\skins\moono-dark\editor_gecko.css" />
+    <Content Include="assets\lib\ckeditor\skins\moono-dark\editor_ie.css" />
+    <Content Include="assets\lib\ckeditor\skins\moono-dark\editor_ie7.css" />
+    <Content Include="assets\lib\ckeditor\skins\moono-dark\editor_ie8.css" />
+    <Content Include="assets\lib\ckeditor\skins\moono-dark\editor_iequirks.css" />
+    <Content Include="assets\lib\ckeditor\skins\moono-dark\icons.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-dark\icons_hidpi.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-dark\images\arrow.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-dark\images\close.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-dark\images\hidpi\close.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-dark\images\hidpi\lock-open.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-dark\images\hidpi\lock.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-dark\images\hidpi\refresh.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-dark\images\lock-open.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-dark\images\lock.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-dark\images\refresh.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono-dark\skin.js" />
+    <Content Include="assets\lib\ckeditor\skins\moono\dialog.css" />
+    <Content Include="assets\lib\ckeditor\skins\moono\dialog_ie.css" />
+    <Content Include="assets\lib\ckeditor\skins\moono\dialog_ie7.css" />
+    <Content Include="assets\lib\ckeditor\skins\moono\dialog_ie8.css" />
+    <Content Include="assets\lib\ckeditor\skins\moono\dialog_iequirks.css" />
+    <Content Include="assets\lib\ckeditor\skins\moono\editor.css" />
+    <Content Include="assets\lib\ckeditor\skins\moono\editor_gecko.css" />
+    <Content Include="assets\lib\ckeditor\skins\moono\editor_ie.css" />
+    <Content Include="assets\lib\ckeditor\skins\moono\editor_ie7.css" />
+    <Content Include="assets\lib\ckeditor\skins\moono\editor_ie8.css" />
+    <Content Include="assets\lib\ckeditor\skins\moono\editor_iequirks.css" />
+    <Content Include="assets\lib\ckeditor\skins\moono\icons.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono\icons_hidpi.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono\images\arrow.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono\images\close.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono\images\hidpi\close.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono\images\hidpi\lock-open.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono\images\hidpi\lock.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono\images\hidpi\refresh.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono\images\lock-open.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono\images\lock.png" />
+    <Content Include="assets\lib\ckeditor\skins\moono\images\refresh.png" />
+    <Content Include="assets\lib\ckeditor\skins\office2013\dialog.css" />
+    <Content Include="assets\lib\ckeditor\skins\office2013\editor.css" />
+    <Content Include="assets\lib\ckeditor\skins\office2013\icons.png" />
+    <Content Include="assets\lib\ckeditor\skins\office2013\icons_hidpi.png" />
+    <Content Include="assets\lib\ckeditor\skins\office2013\images\arrow.png" />
+    <Content Include="assets\lib\ckeditor\skins\office2013\images\close.png" />
+    <Content Include="assets\lib\ckeditor\skins\office2013\images\hidpi\close.png" />
+    <Content Include="assets\lib\ckeditor\skins\office2013\images\hidpi\lock-open.png" />
+    <Content Include="assets\lib\ckeditor\skins\office2013\images\hidpi\lock.png" />
+    <Content Include="assets\lib\ckeditor\skins\office2013\images\hidpi\refresh.png" />
+    <Content Include="assets\lib\ckeditor\skins\office2013\images\lock-open.png" />
+    <Content Include="assets\lib\ckeditor\skins\office2013\images\lock.png" />
+    <Content Include="assets\lib\ckeditor\skins\office2013\images\refresh.png" />
+    <Content Include="assets\lib\ckeditor\skins\office2013\skin.js" />
+    <Content Include="assets\lib\ckeditor\styles.js" />
+    <Content Include="assets\lib\cookie\jquery.cookie.js" />
+    <Content Include="assets\lib\jqueryui\css\ui-lightness\images\animated-overlay.gif" />
+    <Content Include="assets\lib\jqueryui\css\ui-lightness\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="assets\lib\jqueryui\css\ui-lightness\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="assets\lib\jqueryui\css\ui-lightness\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="assets\lib\jqueryui\css\ui-lightness\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="assets\lib\jqueryui\css\ui-lightness\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="assets\lib\jqueryui\css\ui-lightness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="assets\lib\jqueryui\css\ui-lightness\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="assets\lib\jqueryui\css\ui-lightness\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="assets\lib\jqueryui\css\ui-lightness\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="assets\lib\jqueryui\css\ui-lightness\images\ui-icons_222222_256x240.png" />
+    <Content Include="assets\lib\jqueryui\css\ui-lightness\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="assets\lib\jqueryui\css\ui-lightness\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="assets\lib\jqueryui\css\ui-lightness\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="assets\lib\jqueryui\css\ui-lightness\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="assets\lib\jqueryui\css\ui-lightness\jquery-ui-1.10.4.css" />
+    <Content Include="assets\lib\jqueryui\css\ui-lightness\jquery-ui-1.10.4.min.css" />
+    <Content Include="assets\lib\jqueryui\js\jquery-ui-1.10.4.js" />
+    <Content Include="assets\lib\jqueryui\js\jquery-ui-1.10.4.min.js" />
+    <Content Include="assets\lib\jquery\jquery-1.11.0.js" />
+    <Content Include="assets\lib\jquery\jquery-1.11.0.min.js" />
+    <Content Include="assets\lib\lazyload\jquery.lazyload.js" />
+    <Content Include="assets\lib\lazyload\jquery.lazyload.min.js" />
+    <Content Include="assets\lib\pagination\jquery.twbsPagination.js" />
+    <Content Include="assets\lib\pagination\jquery.twbsPagination.min.js" />
+    <Content Include="assets\lib\swfupload\handlers.js" />
+    <Content Include="assets\lib\swfupload\images\error.gif" />
+    <Content Include="assets\lib\swfupload\images\page_white_add.png" />
+    <Content Include="assets\lib\swfupload\images\toobig.gif" />
+    <Content Include="assets\lib\swfupload\images\uploadlimit.gif" />
+    <Content Include="assets\lib\swfupload\images\XPButtonNoText_160x22.png" />
+    <Content Include="assets\lib\swfupload\images\zerobyte.gif" />
+    <Content Include="assets\lib\swfupload\swfupload.js" />
+    <Content Include="assets\lib\swfupload\swfupload.swf" />
+    <Content Include="assets\lib\swfupload\swfupload_fp9.swf" />
+    <Content Include="Cart.aspx" />
+    <Content Include="Confirm.aspx" />
+    <Content Include="Detail.aspx" />
+    <Content Include="Index.aspx" />
+    <Content Include="List.aspx" />
+    <Content Include="shared\Cat.ascx" />
+    <Content Include="shared\WebForm1.aspx" />
+    <Content Include="shared\WebForm2.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="account\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="account\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\CategoryList.aspx.cs">
+      <DependentUpon>CategoryList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\CategoryList.aspx.designer.cs">
+      <DependentUpon>CategoryList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\CategoryAdd.aspx.cs">
+      <DependentUpon>CategoryAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\CategoryAdd.aspx.designer.cs">
+      <DependentUpon>CategoryAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="assets\lib\H-ui\lib\ueditor\1.4.3\net\App_Code\Config.cs" />
+    <Compile Include="assets\lib\H-ui\lib\ueditor\1.4.3\net\App_Code\ConfigHandler.cs" />
+    <Compile Include="assets\lib\H-ui\lib\ueditor\1.4.3\net\App_Code\CrawlerHandler.cs" />
+    <Compile Include="assets\lib\H-ui\lib\ueditor\1.4.3\net\App_Code\Handler.cs" />
+    <Compile Include="assets\lib\H-ui\lib\ueditor\1.4.3\net\App_Code\ListFileHandler.cs" />
+    <Compile Include="assets\lib\H-ui\lib\ueditor\1.4.3\net\App_Code\NotSupportedHandler.cs" />
+    <Compile Include="assets\lib\H-ui\lib\ueditor\1.4.3\net\App_Code\PathFormater.cs" />
+    <Compile Include="assets\lib\H-ui\lib\ueditor\1.4.3\net\App_Code\UploadHandler.cs" />
+    <Compile Include="Cart.aspx.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cart.aspx.designer.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="code\AdminPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="code\PageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="code\SortType.cs" />
+    <Compile Include="Confirm.aspx.cs">
+      <DependentUpon>Confirm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Confirm.aspx.designer.cs">
+      <DependentUpon>Confirm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Detail.aspx.cs">
+      <DependentUpon>Detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Detail.aspx.designer.cs">
+      <DependentUpon>Detail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Focus.aspx.cs">
+      <DependentUpon>Focus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Focus.aspx.designer.cs">
+      <DependentUpon>Focus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="handler\CartUpdate.ashx.cs">
+      <DependentUpon>CartUpdate.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="handler\DeleteAddress.ashx.cs">
+      <DependentUpon>DeleteAddress.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="handler\DeleteCart.ashx.cs">
+      <DependentUpon>DeleteCart.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="handler\DeleteOrder.ashx.cs">
+      <DependentUpon>DeleteOrder.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="handler\LogOut.ashx.cs">
+      <DependentUpon>LogOut.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="handler\SaveAddress.ashx.cs">
+      <DependentUpon>SaveAddress.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="handler\Shutdown.ashx.cs">
+      <DependentUpon>Shutdown.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="handler\Sign.ashx.cs">
+      <DependentUpon>Sign.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="handler\Vcode.ashx.cs">
+      <DependentUpon>Vcode.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="member\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="member\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="member\Comment.aspx.cs">
+      <DependentUpon>Comment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="member\Comment.aspx.designer.cs">
+      <DependentUpon>Comment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="member\MemberCenter.aspx.cs">
+      <DependentUpon>MemberCenter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="member\MemberCenter.aspx.designer.cs">
+      <DependentUpon>MemberCenter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="member\MyAddress.aspx.cs">
+      <DependentUpon>MyAddress.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="member\MyAddress.aspx.designer.cs">
+      <DependentUpon>MyAddress.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="member\MyAddressAdd.aspx.cs">
+      <DependentUpon>MyAddressAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="member\MyAddressAdd.aspx.designer.cs">
+      <DependentUpon>MyAddressAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="member\MyAddressEdit.aspx.cs">
+      <DependentUpon>MyAddressEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="member\MyAddressEdit.aspx.designer.cs">
+      <DependentUpon>MyAddressEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="member\MyOrder.aspx.cs">
+      <DependentUpon>MyOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="member\MyOrder.aspx.designer.cs">
+      <DependentUpon>MyOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="member\MyOrderDetail.aspx.cs">
+      <DependentUpon>MyOrderDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="member\MyOrderDetail.aspx.designer.cs">
+      <DependentUpon>MyOrderDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="member\SideBar.ascx.cs">
+      <DependentUpon>SideBar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="member\SideBar.ascx.designer.cs">
+      <DependentUpon>SideBar.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Order.aspx.cs">
+      <DependentUpon>Order.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Order.aspx.designer.cs">
+      <DependentUpon>Order.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PayResult.aspx.cs">
+      <DependentUpon>PayResult.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PayResult.aspx.designer.cs">
+      <DependentUpon>PayResult.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Search.aspx.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Search.aspx.designer.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="shared\AdminLayout.Master.cs">
+      <DependentUpon>AdminLayout.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="shared\AdminLayout.Master.designer.cs">
+      <DependentUpon>AdminLayout.Master</DependentUpon>
+    </Compile>
+    <Compile Include="shared\Cat.ascx.cs">
+      <DependentUpon>Cat.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="shared\Cat.ascx.designer.cs">
+      <DependentUpon>Cat.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="shared\Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="shared\Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="shared\Handler1.ashx.cs">
+      <DependentUpon>Handler1.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="shared\Layout.Master.cs">
+      <DependentUpon>Layout.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="shared\Layout.Master.designer.cs">
+      <DependentUpon>Layout.Master</DependentUpon>
+    </Compile>
+    <Compile Include="shared\Link.Master.cs">
+      <DependentUpon>Link.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="shared\Link.Master.designer.cs">
+      <DependentUpon>Link.Master</DependentUpon>
+    </Compile>
+    <Compile Include="shared\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="shared\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="www\AdminAdd.aspx.cs">
+      <DependentUpon>AdminAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="www\AdminAdd.aspx.designer.cs">
+      <DependentUpon>AdminAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="www\AdminEdit.aspx.cs">
+      <DependentUpon>AdminEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="www\AdminEdit.aspx.designer.cs">
+      <DependentUpon>AdminEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="www\AdminList.aspx.cs">
+      <DependentUpon>AdminList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="www\AdminList.aspx.designer.cs">
+      <DependentUpon>AdminList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="www\Ajax\Ajax.aspx.cs">
+      <DependentUpon>Ajax.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="www\Ajax\Ajax.aspx.designer.cs">
+      <DependentUpon>Ajax.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="www\Ajax\Dapper.aspx.cs">
+      <DependentUpon>Dapper.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="www\Ajax\Dapper.aspx.designer.cs">
+      <DependentUpon>Dapper.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="www\Ajax\Pager.aspx.cs">
+      <DependentUpon>Pager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="www\Ajax\Pager.aspx.designer.cs">
+      <DependentUpon>Pager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="www\CategoryAdd.aspx.cs">
+      <DependentUpon>CategoryAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="www\CategoryAdd.aspx.designer.cs">
+      <DependentUpon>CategoryAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="www\CategoryEdit.aspx.cs">
+      <DependentUpon>CategoryEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="www\CategoryEdit.aspx.designer.cs">
+      <DependentUpon>CategoryEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="www\CommentList.aspx.cs">
+      <DependentUpon>CommentList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="www\CommentList.aspx.designer.cs">
+      <DependentUpon>CommentList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="www\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="www\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="shared\WebForm2.aspx.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="shared\WebForm2.aspx.designer.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="www\CategoryList.aspx.cs">
+      <DependentUpon>CategoryList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="www\CategoryList.aspx.designer.cs">
+      <DependentUpon>CategoryList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="www\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="www\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="www\MemberAdd.aspx.cs">
+      <DependentUpon>MemberAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="www\MemberAdd.aspx.designer.cs">
+      <DependentUpon>MemberAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="www\MemberEdit.aspx.cs">
+      <DependentUpon>MemberEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="www\MemberEdit.aspx.designer.cs">
+      <DependentUpon>MemberEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="www\MemberList.aspx.cs">
+      <DependentUpon>MemberList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="www\MemberList.aspx.designer.cs">
+      <DependentUpon>MemberList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="www\OrderEdit.aspx.cs">
+      <DependentUpon>OrderEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="www\OrderEdit.aspx.designer.cs">
+      <DependentUpon>OrderEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="www\OrderList.aspx.cs">
+      <DependentUpon>OrderList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="www\OrderList.aspx.designer.cs">
+      <DependentUpon>OrderList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="www\ProductAdd.aspx.cs">
+      <DependentUpon>ProductAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="www\ProductAdd.aspx.designer.cs">
+      <DependentUpon>ProductAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="www\ProductEdit.aspx.cs">
+      <DependentUpon>ProductEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="www\ProductEdit.aspx.designer.cs">
+      <DependentUpon>ProductEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="www\ProductList.aspx.cs">
+      <DependentUpon>ProductList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="www\ProductList.aspx.designer.cs">
+      <DependentUpon>ProductList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="www\Welcome.aspx.cs">
+      <DependentUpon>Welcome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="www\Welcome.aspx.designer.cs">
+      <DependentUpon>Welcome.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{e73623fc-b4d5-4d48-97dc-ce3c5a32a458}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CommonHelper\CommonHelper.csproj">
+      <Project>{cbbaaf87-c0f0-4196-8bcb-b4e0bca74ef4}</Project>
+      <Name>CommonHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{2ee81677-0336-4b4c-a20a-a4b0cb96cd9a}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="contents\books\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>
+          </DevelopmentServerVPath>
+          <IISUrl>http://localhost:9713/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
